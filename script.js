@@ -98,8 +98,7 @@ require.config({ paths: { 'vs': 'https://rubisco.pages.dev/sylfaen/library/andor
             preview.srcdoc = html;
         });
 
-        // Load the custom font and remeasure fonts once it's loaded
-        const font = new FontFace('andorraMono', 'url(https://webscript.pages.dev/LaurentiaCode-VF.ttf)');
+        const font = new FontFace('andorraMono', 'url(https://webhtml.pages.dev/RubiscoMono-VF.ttf)');
 
         font.load().then(() => {
             document.fonts.add(font);

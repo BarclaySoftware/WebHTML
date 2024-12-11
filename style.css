@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'andorraSans';
-    src: url(/RubiscoText-VF.ttf);
+    src: url(./RubiscoText-VF.ttf);
 }
 
 @font-face {
@@ -20,7 +20,7 @@ html, body {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    font-family: 'Roadway', 'TwemojiRubisco', Arial, Helvetica, sans-serif;
+    font-family: 'andorraSans', 'TwemojiRubisco', Arial, Helvetica, sans-serif;
 }
 
 #logo {
@@ -40,7 +40,7 @@ html, body {
 
 #editor {
     width: 50%;
-    font-family: 'Roadway', 'TwemojiRubisco', Arial, Helvetica, sans-serif;
+    font-family: 'andorraSans', 'TwemojiRubisco', Arial, Helvetica, sans-serif;
     overflow: none;
 }
 
