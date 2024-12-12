@@ -2,17 +2,14 @@
     font-family: 'andorraSans';
     src: url(./RubiscoText-VF.ttf);
 }
-
 @font-face {
     font-family: 'SeavoltUIEmoji';
     src: url(https://delivercdn.pages.dev/jupiter/SeavoltUI/emoji/SeavoltUIEmoji.ttf);
 }
-
 @font-face {
     font-family: 'Gloobmoji';
     src: url(https://delivercdn.pages.dev/jupiter/SeavoltUI/emoji/Gloobmoji.ttf);
 }
-
 html, body {
     margin: 0;
     padding: 0;
@@ -22,7 +19,6 @@ html, body {
     flex-direction: column;
     font-family: 'andorraSans', 'TwemojiRubisco', Arial, Helvetica, sans-serif;
 }
-
 #logo {
     position: absolute;
     top: 0;
@@ -31,39 +27,32 @@ html, body {
     height: 100px;
     z-index: 1;
 }
-
 #editor-container {
     flex: 1;
     display: flex;
     height: 100%;
 }
-
 #editor {
     width: 50%;
-    font-family: 'andorraSans', 'TwemojiRubisco', Arial, Helvetica, sans-serif;
     overflow: none;
 }
-
 #divider {
     width: 3px;
     cursor: ew-resize;
     background-color: #000;
 }
-
 #preview {
     flex: 1;
     overflow: auto;
     background-color: #ffffff;
     border-left: 1px solid #000;
 }
-
 .button-container {
     display: flex;
     justify-content: flex-end;
     padding: 8px;
     background-color: #000000;
 }
-
 button {
     font-family: 'andorraSans', 'TwemojiRubisco', Arial, Helvetica, sans-serif;
     margin-right: 8px;
@@ -75,16 +64,10 @@ button {
     border: none;
     border-radius: 4px;
 }
-
 button:hover {
     background-color: #3474f0;
     color: #ffffff;
 }
-
-.monaco-editor, .suggest-widget, .monaco-list, .monaco-list-row, .monaco-highlighted-label {
-    color: #ffffff !important;
-}
-
 select {
     font-family: 'andorraSans', 'TwemojiRubisco', Arial, Helvetica, sans-serif;
     font-size: 14px;
@@ -95,7 +78,6 @@ select {
     padding: 6px 12px;
     border-radius: 4px;
 }
-
 #logo {
     position: absolute;
     top: 0;
@@ -106,7 +88,6 @@ select {
     margin-left: 10px;
     padding-top: 8px;
 }
-
 iframe {
     width: 100%;
     height: 100%;

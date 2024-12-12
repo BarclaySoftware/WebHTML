@@ -131,7 +131,7 @@ require.config({ paths: { 'vs': 'https://rubisco.pages.dev/sylfaen/library/andor
             var a = document.createElement('a');
             a.href = url;
             var currentDate = new Date().toISOString().slice(0, 19).replace(/[-T:/]/g, '');
-            var fileName = 'html_' + currentDate + '.html';
+            var fileName = currentDate + '.html';
             a.download = fileName;
             document.title = fileName;
             document.body.appendChild(a);
@@ -143,7 +143,7 @@ require.config({ paths: { 'vs': 'https://rubisco.pages.dev/sylfaen/library/andor
 
         function saveDump() {
             var content = editor.getValue();
-            var blob = new Blob([content], { type: 'text/' });
+            var blob = new Blob([content], { type: 'text/dotlin' });
             var url = URL.createObjectURL(blob);
             var a = document.createElement('a');
             a.href = url;
