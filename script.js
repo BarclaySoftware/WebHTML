@@ -1,4 +1,4 @@
-require.config({ paths: { 'vs': 'https://cdn360.pages.dev/library/andorra/min/vs' } });
+require.config({ paths: { 'vs': 'https://andorraeditor.pages.dev/library/andorra/min/vs' } });
 require(['vs/editor/editor.main'], function () {
     andorra.editor.defineTheme('WebScript', {
         base: 'vs-dark',
