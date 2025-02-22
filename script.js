@@ -117,7 +117,7 @@ require(['vs/editor/editor.main'], function () {
 
     updatePreview();
 
-    const font = new FontFace('Consolium', 'url(https://webhtml.pages.dev/Consolium-Regular.ttf)');
+    const font = new FontFace('Consolium', 'url(https://webhtml.pages.dev/consoli.ttf)');
 
     font.load().then(() => {
         document.fonts.add(font);
