@@ -50,9 +50,9 @@ require(['vs/editor/editor.main'], function () {
             { token: 'predefined.sql', foreground: '2e95d3' },
         ],
         colors: {
-            'editorCursor.foreground': '#9e9e9e', // Cursor color
-            'editor.background': '#0d0d0d', // Background color
-            'editor.foreground': '#ffffff', // Text color
+            'editorCursor.foreground': '#9e9e9e',
+            'editor.background': '#0d0d0d',
+            'editor.foreground': '#ffffff',
             'editorBracketHighlight.foreground1': '#ffffff',
             'editorBracketHighlight.foreground2': '#ffffff',
             'editorBracketHighlight.foreground3': '#ffffff',
@@ -76,7 +76,7 @@ require(['vs/editor/editor.main'], function () {
         theme: 'WebScript',
         automaticLayout: true,
         fontSize: 16,
-        fontFamily: `'Laurentia Code', 'Sevolt Emoji Color', monospace`,
+        fontFamily: `'Consolium', 'Sevolt Emoji Color', monospace`,
         scrollBeyondLastLine: true,
         minimap: { enabled: true },
         lineNumbers: 'on',
@@ -117,7 +117,7 @@ require(['vs/editor/editor.main'], function () {
 
     updatePreview();
 
-    const font = new FontFace('andorraMono', 'url(https://evermorefonts.pages.dev/library/VellaFamily/fonts/VellaMono.ttf)');
+    const font = new FontFace('Consolium', 'url(https://webhtml.pages.dev/Consolium-Regular.ttf)');
 
     font.load().then(() => {
         document.fonts.add(font);
