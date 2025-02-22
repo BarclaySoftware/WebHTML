@@ -135,7 +135,7 @@ require(['vs/editor/editor.main'], function () {
             var reader = new FileReader();
             reader.onload = function() {
                 editor.setValue(reader.result);
-                document.title = file.name;
+                document.title = file.name + ' - Aurorasoft WebHTML';
                 updatePreview();
             };
             reader.readAsText(file);
@@ -150,9 +150,9 @@ require(['vs/editor/editor.main'], function () {
         var a = document.createElement('a');
         a.href = url;
         var currentDate = new Date().toISOString().slice(0, 19).replace(/[-T:/]/g, '');
-        var fileName = 'html_' + currentDate + '.html';
+        var fileName = 'WebHTML_' + currentDate + '.html';
         a.download = fileName;
-        document.title = fileName;
+        document.title = fileName + ' - Aurorasoft WebHTML';
         document.body.appendChild(a);
         a.click();
         window.URL.revokeObjectURL(url);
@@ -167,7 +167,7 @@ require(['vs/editor/editor.main'], function () {
         var a = document.createElement('a');
         a.href = url;
         var currentDate = new Date().toISOString().slice(0, 19).replace(/[-T:/]/g, '');
-        var fileName = 'savedump_' + currentDate + '.dt';
+        var fileName = 'WebHTML_' + currentDate + '.dt';
         a.download = fileName;
         document.title = fileName;
         document.body.appendChild(a);
