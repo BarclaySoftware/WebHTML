@@ -285,6 +285,13 @@ require(['vs/editor/editor.main'], function () {
                     documentation: 'Description of a term in a description list'
                 },
                 {
+                    label: 'default',
+                    kind: andorra.languages.CompletionItemKind.Snippet,
+                    insertText: '<!-- Snippet (c) 2025 Aurorasoft. All Rights Reserved. -->\n<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta http-equiv="X-UA-Compatible" content="IE=edge">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>$1</title>\n    <link rel="shortcut icon" href="$2" type="image/x-icon">\n    <style>\n        $3\n    </style>\n</head>\n<body>\n    $4\n</body>\n</html>',
+                    insertTextRules: andorra.languages.CompletionItemInsertTextRule.InsertAsSnippet,
+                    documentation: 'WebHTML default snippet'
+                },
+                {
                     label: 'del',
                     kind: andorra.languages.CompletionItemKind.Snippet,
                     insertText: '<del>$1</del>',
