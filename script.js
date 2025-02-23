@@ -523,6 +523,13 @@ require(['vs/editor/editor.main'], function () {
                     documentation: 'Link to external resources (CSS, etc.)'
                 },
                 {
+                    label: 'link:icon',
+                    kind: andorra.languages.CompletionItemKind.Snippet,
+                    insertText: '<link rel="shortcut icon" href="$1" type="image/x-icon">',
+                    insertTextRules: andorra.languages.CompletionItemInsertTextRule.InsertAsSnippet,
+                    documentation: 'Link to external resources (CSS, etc.)'
+                },
+                {
                     label: 'main',
                     kind: andorra.languages.CompletionItemKind.Snippet,
                     insertText: '<main>$1</main>',
@@ -668,6 +675,20 @@ require(['vs/editor/editor.main'], function () {
                     insertText: '<s>$1</s>',
                     insertTextRules: andorra.languages.CompletionItemInsertTextRule.InsertAsSnippet,
                     documentation: 'Strikethrough text'
+                },
+                {
+                    label: 'script',
+                    kind: andorra.languages.CompletionItemKind.Snippet,
+                    insertText: '<script>$1</script>',
+                    insertTextRules: andorra.languages.CompletionItemInsertTextRule.InsertAsSnippet,
+                    documentation: 'Script tags'
+                },
+                {
+                    label: 'script:src',
+                    kind: andorra.languages.CompletionItemKind.Snippet,
+                    insertText: '<script src="$1"></script>',
+                    insertTextRules: andorra.languages.CompletionItemInsertTextRule.InsertAsSnippet,
+                    documentation: 'Script tags'
                 },
                 {
                     label: 'section',
