@@ -989,19 +989,6 @@ require(['vs/editor/editor.main'], function () {
         }
     });
 
-    // New function to open preview in a new tab
-    document.getElementById('previewInNewTab').addEventListener('click', function() {
-        var newTab = window.open();
-        var content = editor.getValue();
-        newTab.document.open();
-        newTab.document.write(content);
-        newTab.document.close();
-    });
-
-    document.getElementById('help').addEventListener('click', function() {
-        window.open("https://www.google.com")
-    });
-
     var divider = document.getElementById('divider');
     var editorContainer = document.getElementById('editor-container');
     var editorElement = document.getElementById('editor');
