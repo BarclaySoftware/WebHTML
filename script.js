@@ -93,7 +93,7 @@ require(['vs/editor/editor.main'], function () {
         theme: 'WebHTML',
         automaticLayout: true,
         fontSize: 16,
-        fontFamily: `'Laurentia Code', 'Sevolt Emoji Color', monospace`,
+        fontFamily: `'Consolium', 'Sevolt Emoji Color', monospace`,
         scrollBeyondLastLine: true,
         minimap: { enabled: true },
         lineNumbers: 'on',
@@ -891,7 +891,7 @@ require(['vs/editor/editor.main'], function () {
 
     updatePreview();
 
-    const font = new FontFace('Consolium', 'url(https://webhtml.pages.dev/consoli.ttf)');
+    const font = new FontFace('Consolium', 'url(https://aurorasoft.pages.dev/fonts/consoli.ttf)');
 
     font.load().then(() => {
         document.fonts.add(font);
