@@ -1023,15 +1023,9 @@ require(['vs/editor/editor.main'], function () {
         window.open("https://www.google.com")
     });
 
-    var divider = document.getElementById('divider');
     var editorContainer = document.getElementById('editor-container');
     var editorElement = document.getElementById('editor');
     var isResizing = false;
-
-    divider.addEventListener('mousedown', function(e) {
-        isResizing = true;
-        document.body.style.cursor = 'ew-resize';
-    });
 
     document.addEventListener('mousemove', function(e) {
         if (isResizing) {
@@ -1048,4 +1042,11 @@ require(['vs/editor/editor.main'], function () {
             document.body.style.cursor = 'default';
         }
     });
+
+    Split(['#editor', '#preview'], {
+        sizes: [50, 50],
+        minSize: 200,
+        gutterSize: 8,
+        cursor: 'col-resize'
+      });
 });

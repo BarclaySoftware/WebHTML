@@ -29,17 +29,17 @@ html, body {
     overflow: none;
 }
 
-#divider {
-    width: 6px;
-    cursor: ew-resize;
-    background-color: #666;
+.gutter {
+    background-color: #000000;
+    cursor: col-resize;
+    width: 8px;
 }
-
+  
 #preview {
     flex: 1;
     overflow: auto;
     background-color: #ffffff;
-    border-left: 1px solid #000;
+    /* border-left: 1px solid #000000; */
 }
 
 .button-container {
@@ -101,16 +101,12 @@ iframe {
     }
 
     #editor {
-        width: 100%; /* Full width on mobile */
+    width: 100% !important; /* Full width on mobile */
         height: 50%; /* Half of the screen */
     }
 
-    #divider {
-        display: none; /* Remove divider on mobile */
-    }
-
     #preview {
-        width: 100%; /* Full width on mobile */
+        width: 100% !important; /* Full width on mobile */
         height: 50%; /* Half of the screen */
         border: none; /* Remove border on mobile */
     }

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aurorasoft WebHTML 2</title>
     <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/split.js/dist/split.min.js"></script>
     <script src="https://andorraeditor.pages.dev/library/andorra/min/vs/loader.js"></script>
     <link rel="stylesheet" href="https://aurorasoft.pages.dev/fonts/library.css">
     <link rel="stylesheet" href="style.css">
@@ -28,9 +29,8 @@
         </select>
     </div>
     <div id="editor-container">
-        <div id="editor"></div>
-        <div id="divider"></div>
-        <iframe id="preview"></iframe>
+        <div id="editor" class="pane"></div>
+        <iframe id="preview" class="pane"></iframe>
     </div>
     <script src="script.js"></script>
 </body>
