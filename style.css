@@ -34,7 +34,7 @@ html, body {
     cursor: col-resize;
     width: 8px;
 }
-  
+
 #preview {
     flex: 1;
     overflow: auto;
@@ -96,6 +96,13 @@ iframe {
 
 /* Mobile Layout (small screen) */
 @media (max-width: 768px) {
+    .button-container {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        padding: 12px;
+    }
+
     #editor-container {
         flex-direction: column; /* Stack editor and preview vertically */
     }
