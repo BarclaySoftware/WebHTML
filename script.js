@@ -69,26 +69,7 @@ require(['vs/editor/editor.main'], function () {
     });
 
     var editor = andorra.editor.create(document.getElementById('editor'), {
-        value: `<!-- Snippet (c) 2025 Aurorasoft. All Rights Reserved. -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://webhtml.pages.dev/icon.png" type="image/x-icon">
-    <title>My Webpage</title>
-    <style>
-        body {
-            font-family: sans-serif;
-        }
-    </style>
-</head>
-<body>
-    <h1>Hello World!</h1>
-    <p>This is my webpage text.</p>
-</body>
-</html>`,
+        value: ``,
         language: 'html',
         theme: 'WebHTML',
         automaticLayout: true,
@@ -121,7 +102,7 @@ require(['vs/editor/editor.main'], function () {
         multiCursorLimit: 1000,
         occurrencesHighlight: 'singleFile',
         peekWidgetDefaultFocus: 'editor',
-        renderLineHighlight: 'gutter',
+        // renderLineHighlight: 'gutter',
         renderWhitespace: 'selection',
         wordBreak: 'normal',
         wrappingStrategy: 'advanced',
@@ -131,11 +112,37 @@ require(['vs/editor/editor.main'], function () {
         provideCompletionItems: function (model, position) {
             var suggestions = [
                 {
+                    label: 'Template (WebHTML Default)',
+                    kind: andorra.languages.CompletionItemKind.Snippet,
+                    insertText: `<!-- Snippet (c) 2025 Aurorasoft. All Rights Reserved. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://webhtml.pages.dev/icon.png" type="image/x-icon">
+    <title>My Webpage</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <p>This is my webpage text.</p>
+</body>
+</html>`,
+                    insertTextRules: andorra.languages.CompletionItemInsertTextRule.InsertAsSnippet,
+                    documentation: 'A basic website template from WebHTML'
+                },
+                {
                     label: 'a',
                     kind: andorra.languages.CompletionItemKind.Snippet,
                     insertText: '<a href="$1">$2</a>',
                     insertTextRules: andorra.languages.CompletionItemInsertTextRule.InsertAsSnippet,
-                    documentation: 'Anchor tag'
+                    documentation: 'Anchor tag (for a link)'
                 },
                 {
                     label: 'area',
@@ -285,7 +292,7 @@ require(['vs/editor/editor.main'], function () {
                     documentation: 'Description of a term in a description list'
                 },
                 {
-                    label: 'default',
+                    label: 'Template (WebHTML Blank)',
                     kind: andorra.languages.CompletionItemKind.Snippet,
                     insertText: '<!-- Snippet (c) 2025 Aurorasoft. All Rights Reserved. -->\n<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta http-equiv="X-UA-Compatible" content="IE=edge">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>$1</title>\n    <link rel="shortcut icon" href="$2" type="image/x-icon">\n    <style>\n        $3\n    </style>\n</head>\n<body>\n    $4\n</body>\n</html>',
                     insertTextRules: andorra.languages.CompletionItemInsertTextRule.InsertAsSnippet,
@@ -1010,7 +1017,6 @@ require(['vs/editor/editor.main'], function () {
         }
     });
 
-    // New function to open preview in a new tab
     document.getElementById('previewInNewTab').addEventListener('click', function() {
         var newTab = window.open();
         var content = editor.getValue();
