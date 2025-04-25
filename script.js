@@ -891,6 +891,17 @@ require(['vs/editor/editor.main'], function () {
         }
     });
 
+    function ensureFontsLoaded(callback) {
+        document.fonts.ready.then(() => {
+            andorra.editor.remeasureFonts();
+            callback();
+        });
+    }
+
+    ensureFontsLoaded(() => {
+        console.log("Fonts loaded and remeasured.");
+    });
+
     editor.onDidChangeModelContent(() => {
         const html = editor.getValue();
         preview.srcdoc = html;
@@ -898,14 +909,14 @@ require(['vs/editor/editor.main'], function () {
 
     updatePreview();
 
-    const font = new FontFace('Consolium', 'url(https://aurorasoft.pages.dev/fonts/consoli.ttf)');
+    // const font = new FontFace('Consolium', 'url(https://aurorasoft.pages.dev/fonts/consoli.ttf)');
 
-    font.load().then(() => {
-        document.fonts.add(font);
-        andorra.editor.remeasureFonts();
-    }).catch((error) => {
-        console.error('Error loading custom font:', error);
-    });
+    // font.load().then(() => {
+    //     document.fonts.add(font);
+    //     andorra.editor.remeasureFonts();
+    // }).catch((error) => {
+    //     console.error('Error loading custom font:', error);
+    // });
 
     function openFile() {
         var input = document.createElement('input');
