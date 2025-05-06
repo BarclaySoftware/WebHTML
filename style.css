@@ -31,7 +31,7 @@ html, body {
 
 .gutter {
     background-color: #000000;
-    cursor: col-resize;
+    cursor: w-resize;
     width: 8px;
 }
 
