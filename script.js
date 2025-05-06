@@ -1064,6 +1064,6 @@ require(['vs/editor/editor.main'], function () {
         sizes: [50, 50],
         minSize: 0,
         gutterSize: 8,
-        cursor: 'col-resize'
+        cursor: 'w-resize'
       });
 });
