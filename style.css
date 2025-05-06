@@ -1,5 +1,5 @@
 html, body {
-    font-family: 'Sevolt UI', 'Sevolt Emoji Color', system-ui, Arial, Helvetica, sans-serif;
+    font-family: 'Barclay Text', 'Sevolt Emoji Color', system-ui, Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -49,7 +49,7 @@ html, body {
 }
 
 button {
-    font-family: 'Sevolt UI', 'Sevolt Emoji Color', system-ui, Arial, Helvetica, sans-serif;
+    font-family: 'Barclay Text', 'Sevolt Emoji Color', system-ui, Arial, Helvetica, sans-serif;
     margin-right: 8px;
     padding: 6px 12px;
     font-size: 14px;
@@ -66,7 +66,7 @@ button:hover {
 }
 
 select {
-    font-family: 'Sevolt UI', 'Sevolt Emoji Color', system-ui, Arial, Helvetica, sans-serif;
+    font-family: 'Barclay Text', 'Sevolt Emoji Color', system-ui, Arial, Helvetica, sans-serif;
     font-size: 14px;
     color: #ffffff;
     background-color: #212121;

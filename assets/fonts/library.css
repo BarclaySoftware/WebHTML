@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'Barclay Text';
+    src: url(./WTGBarclayText-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Barclay Text';
+    src: url(./WTGBarclayText-Bold.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Barclay Text';
+    src: url(./WTGBarclayText-Italic.ttf);
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Barclay Text';
+    src: url(./WTGBarclayText-BoldItalic.ttf);
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Consolium';
+    src: url(./consoli.ttf);
+}
