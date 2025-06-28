@@ -74,7 +74,7 @@ require(['vs/editor/editor.main'], function () {
         theme: 'WebHTML',
         automaticLayout: true,
         fontSize: 16,
-        fontFamily: `'Barclay Mono', 'Sevolt Emoji Color', monospace`,
+        fontFamily: `'WebHTML Mono', 'Sevolt Emoji Color', monospace`,
         scrollBeyondLastLine: true,
         minimap: { enabled: true },
         lineNumbers: 'on',

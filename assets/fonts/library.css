@@ -26,26 +26,26 @@
 }
 
 @font-face {
-    font-family: 'Barclay Mono';
-    src: url(./WTGBarclayMono-Regular.ttf);
+    font-family: 'WebHTML Mono';
+    src: url(./WebHTMLMono-Regular.ttf);
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
-    font-family: 'Barclay Mono';
-    src: url(./WTGBarclayMono-Bold.ttf);
+    font-family: 'WebHTML Mono';
+    src: url(./WebHTMLMono-Bold.ttf);
     font-weight: 700;
     font-style: normal;
 }
 @font-face {
-    font-family: 'Barclay Mono';
-    src: url(./WTGBarclayMono-Italic.ttf);
+    font-family: 'WebHTML Mono';
+    src: url(./WebHTMLMono-Italic.ttf);
     font-weight: 400;
     font-style: italic;
 }
 @font-face {
-    font-family: 'Barclay Mono';
-    src: url(./WTGBarclayMono-BoldItalic.ttf);
+    font-family: 'WebHTML Mono';
+    src: url(./WebHTMLMono-BoldItalic.ttf);
     font-weight: 700;
     font-style: italic;
 }
