@@ -15,18 +15,18 @@
 <body>
     <img id="logo" src="assets/images/logo-full.png" alt="Aurorasoft WebHTML 2">
     <div class="button-container">
-        <button id="openButton">📂</button>
-        <button id="saveButton">💾</button>
-        <button id="previewInNewTab">👁️</button>
-        <button id="help">❓</button>
-        <button id="saveDump">⬇️</button>
-        <select id="lineWrapSelect">
-            <option selected value="off">Line Wrap: Off</option>
-            <option value="on">Line Wrap: On</option>
+        <button title="Open an HTML file" id="openButton">📂</button>
+        <button title="Download this file as HTML" id="saveButton">💾</button>
+        <button title="Preview this page in a new tab" id="previewInNewTab">👁️</button>
+        <button title="Get help" id="help">❓</button>
+        <button title="Save this file as Dump" id="saveDump">⬇️</button>
+        <select title="Toggle line wrap" id="lineWrapSelect">
+            <option selected value="off">No line wrap</option>
+            <option value="on">Wrap lines</option>
         </select>
-        <select id="minimapSelect">
-            <option value="on">Minimap: On</option>
-            <option value="off">Minimap: Off</option>
+        <select title="Toggle the minimap" id="minimapSelect">
+            <option value="on">Minimap on</option>
+            <option value="off">Minimap off</option>
         </select>
     </div>
     <div id="editor-container">
