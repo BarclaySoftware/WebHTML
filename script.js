@@ -4,8 +4,8 @@ require(['vs/editor/editor.main'], function () {
         base: 'vs-dark',
         inherit: true,
         rules: [
-            { token: 'comment', foreground: '58a74a' },
-            { token: 'comment.doc', foreground: '58a74a' },
+            { token: 'comment', foreground: '58a74a', fontStyle: 'italic' },
+            { token: 'comment.doc', foreground: '58a74a', fontStyle: 'italic' },
             { token: 'tag', foreground: '579dd7' },
             { token: 'variable', foreground: '2e95d3' },
             { token: 'variable.predefined', foreground: '2e95d3' },
