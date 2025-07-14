@@ -120,6 +120,7 @@ require(['vs/editor/editor.main'], function () {
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Aurorasoft WebHTML 2">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="https://webhtml.pages.dev/icon.png" type="image/x-icon">
     <title>My Webpage</title>
@@ -294,7 +295,7 @@ require(['vs/editor/editor.main'], function () {
                 {
                     label: 'Template (WebHTML Blank)',
                     kind: andorra.languages.CompletionItemKind.Snippet,
-                    insertText: '<!-- Snippet (c) 2025 Aurorasoft. All Rights Reserved. -->\n<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta http-equiv="X-UA-Compatible" content="IE=edge">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>$1</title>\n    <link rel="shortcut icon" href="$2" type="image/x-icon">\n    <style>\n        $3\n    </style>\n</head>\n<body>\n    $4\n</body>\n</html>',
+                    insertText: '<!-- Snippet (c) 2025 Aurorasoft. All Rights Reserved. -->\n<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="generator" content="Aurorasoft WebHTML 2">\n    <meta http-equiv="X-UA-Compatible" content="IE=edge">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>$1</title>\n    <link rel="shortcut icon" href="$2" type="image/x-icon">\n    <style>\n        $3\n    </style>\n</head>\n<body>\n    $4\n</body>\n</html>',
                     insertTextRules: andorra.languages.CompletionItemInsertTextRule.InsertAsSnippet,
                     documentation: 'WebHTML default snippet'
                 },
