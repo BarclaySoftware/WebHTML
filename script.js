@@ -692,6 +692,13 @@ require(['vs/editor/editor.main'], function () {
                     documentation: 'Script tags'
                 },
                 {
+                    label: 'script:module',
+                    kind: andorra.languages.CompletionItemKind.Snippet,
+                    insertText: '<script type="module" src="$1"></script>',
+                    insertTextRules: andorra.languages.CompletionItemInsertTextRule.InsertAsSnippet,
+                    documentation: 'Script tags'
+                },
+                {
                     label: 'script:src',
                     kind: andorra.languages.CompletionItemKind.Snippet,
                     insertText: '<script src="$1"></script>',
