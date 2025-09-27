@@ -74,7 +74,7 @@ require(['vs/editor/editor.main'], function () {
         theme: 'WebHTML',
         automaticLayout: true,
         fontSize: 16,
-        fontFamily: `'WebHTML Mono', 'Sevolt Emoji Color', monospace`,
+        fontFamily: `'Editor Mono Pro', 'Sevolt Emoji Flat', monospace`,
         scrollBeyondLastLine: true,
         minimap: { enabled: true },
         lineNumbers: 'on',
@@ -907,7 +907,7 @@ require(['vs/editor/editor.main'], function () {
     }
 
     ensureFontsLoaded(() => {
-        console.log("Fonts loaded and remeasured.");
+        console.log("FontsAPI: Fonts loaded and remeasured.");
     });
 
     editor.onDidChangeModelContent(() => {
@@ -916,15 +916,6 @@ require(['vs/editor/editor.main'], function () {
     });
 
     updatePreview();
-
-    // const font = new FontFace('Consolium', 'url(https://aurorasoft.pages.dev/fonts/consoli.ttf)');
-
-    // font.load().then(() => {
-    //     document.fonts.add(font);
-    //     andorra.editor.remeasureFonts();
-    // }).catch((error) => {
-    //     console.error('Error loading custom font:', error);
-    // });
 
     function openFile() {
         var input = document.createElement('input');
@@ -1044,9 +1035,9 @@ require(['vs/editor/editor.main'], function () {
         newTab.document.close();
     });
 
-    document.getElementById('help').addEventListener('click', function() {
-        window.open("https://www.google.com")
-    });
+    // document.getElementById('help').addEventListener('click', function() {
+    //     window.open("https://www.google.com")
+    // });
 
     var editorContainer = document.getElementById('editor-container');
     var editorElement = document.getElementById('editor');

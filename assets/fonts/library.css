@@ -1,56 +1,23 @@
 /* Culsans Design System Fonts */
 
 @font-face {
-    font-family: 'Barclay Text';
-    src: url(./WTGBarclayText-Regular.ttf);
-    font-weight: 400;
+    font-family: 'Aurora Sans';
+    src: url(./AuroraSans.ttf);
     font-style: normal;
 }
 @font-face {
-    font-family: 'Barclay Text';
-    src: url(./WTGBarclayText-Bold.ttf);
-    font-weight: 700;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Barclay Text';
-    src: url(./WTGBarclayText-Italic.ttf);
-    font-weight: 400;
-    font-style: italic;
-}
-@font-face {
-    font-family: 'Barclay Text';
-    src: url(./WTGBarclayText-BoldItalic.ttf);
-    font-weight: 700;
+    font-family: 'Aurora Sans';
+    src: url(./AuroraSans-Italic.ttf);
     font-style: italic;
 }
 
 @font-face {
-    font-family: 'WebHTML Mono';
-    src: url(./WebHTMLMono-Regular.ttf);
-    font-weight: 400;
+    font-family: 'Editor Mono Pro';
+    src: url(./EditorMonoPro.ttf);
     font-style: normal;
 }
 @font-face {
-    font-family: 'WebHTML Mono';
-    src: url(./WebHTMLMono-Bold.ttf);
-    font-weight: 700;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'WebHTML Mono';
-    src: url(./WebHTMLMono-Italic.ttf);
-    font-weight: 400;
+    font-family: 'Editor Mono Pro';
+    src: url(./EditorMonoPro-Italic.ttf);
     font-style: italic;
-}
-@font-face {
-    font-family: 'WebHTML Mono';
-    src: url(./WebHTMLMono-BoldItalic.ttf);
-    font-weight: 700;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Consolium';
-    src: url(./consoli.ttf);
 }

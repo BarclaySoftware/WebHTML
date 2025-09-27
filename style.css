@@ -1,5 +1,5 @@
 html, body {
-    font-family: 'Barclay Sans', 'Sevolt Emoji Color', system-ui, Arial, Helvetica, sans-serif;
+    font-family: 'Aurora Sans', 'Sevolt Emoji Flat', system-ui, Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -9,7 +9,7 @@ html, body {
 }
 
 .andorra-inputbox>.ibwrapper>.input {
-    font-family: 'Barclay Sans', 'Sevolt Emoji Color', system-ui, Arial, Helvetica, sans-serif !important;
+    font-family: 'Aurora Sans', 'Sevolt Emoji Flat', system-ui, Arial, Helvetica, sans-serif !important;
 }
 
 #logo {
@@ -37,6 +37,12 @@ html, body {
     background-color: #000000;
     cursor: w-resize;
     width: 8px;
+    transition: 0.6s background-color;
+}
+.gutter:hover {
+    background-color: #3474f0;
+    cursor: w-resize;
+    width: 8px;
 }
 
 #preview {
@@ -53,7 +59,7 @@ html, body {
 }
 
 button {
-    font-family: 'Barclay Sans', 'Sevolt Emoji Color', system-ui, Arial, Helvetica, sans-serif;
+    font-family: 'Aurora Sans', 'Sevolt Emoji Flat', system-ui, Arial, Helvetica, sans-serif;
     margin-right: 8px;
     padding: 6px 12px;
     font-size: 14px;
@@ -70,7 +76,7 @@ button:hover {
 }
 
 select {
-    font-family: 'Barclay Sans', 'Sevolt Emoji Color', system-ui, Arial, Helvetica, sans-serif;
+    font-family: 'Aurora Sans', 'Sevolt Emoji Flat', system-ui, Arial, Helvetica, sans-serif;
     font-size: 14px;
     color: #ffffff;
     background-color: #212121;
