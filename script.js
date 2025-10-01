@@ -139,6 +139,119 @@ require(['vs/editor/editor.main'], function () {
                     documentation: 'A basic website template from WebHTML'
                 },
                 {
+                    label: 'Template (Landing Page)',
+                    kind: andorra.languages.CompletionItemKind.Snippet,
+                    insertText: `<!-- Snippet (c) 2025 Aurorasoft. All Rights Reserved. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Aurorasoft WebHTML 2">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Webpage</title>
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <script type="module" src="https://webtelegraph.pages.dev/components/wledig.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .blurb {
+            text-align: center;
+            line-height: 30px;
+        }
+        wledig-accordion-item {
+            font-family: sans-serif;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            border-bottom: 1px solid #ccc;
+        }
+        header img {
+            height: 30px;
+        }
+        header .buttons {
+            display: flex;
+            gap: 10px;
+        }
+        header button {
+            font-family: sans-serif;
+            font-weight: 700;
+            color: #ffffff;
+            background-color: #1f75fe;
+            transition: background-color 400ms;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 10px;
+            cursor: pointer;
+        }
+        header button:hover {
+            background-color: #1cac78;
+        }
+        .content {
+            margin: 60px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="" alt="Logo">
+        <div class="buttons">
+            <a href=""><button>My Button 1</button></a>
+            <a href=""><button>My Button 2</button></a>
+        </div>
+    </header>
+    <div class="content">
+        <h1>Add a Catchy Headline Here</h1>
+
+        <p class="blurb">Explain a bit more about your company, service, or product here.</p>
+
+        <wledig-divider></wledig-divider>
+
+        <h4>Section Heading</h4>
+        <p>Add more information in the accordions below... if you want.</p>
+
+        <wledig-accordion>
+            <wledig-accordion-item>
+                <span slot="heading">Item 1</span>
+                <div class="panel">
+                    Panel one content
+                </div>
+            </wledig-accordion-item>
+            <wledig-accordion-item>
+                <span slot="heading">Item 2</span>
+                <div class="panel">
+                    Panel 2 content
+                </div>
+            </wledig-accordion-item>
+            <wledig-accordion-item>
+                <span slot="heading">Item 3</span>
+                <div class="panel">
+                    Panel 3 content
+                </div>
+            </wledig-accordion-item>
+            <wledig-accordion-item>
+                <span slot="heading">Item 4</span>
+                <div class="panel">
+                    Panel 4 content
+                </div>
+            </wledig-accordion-item>
+        </wledig-accordion>
+    </div>
+</body>
+</html>
+`,
+                    insertTextRules: andorra.languages.CompletionItemInsertTextRule.InsertAsSnippet,
+                    documentation: 'A basic website template from WebHTML'
+                },
+                {
                     label: 'a',
                     kind: andorra.languages.CompletionItemKind.Snippet,
                     insertText: '<a href="$1">$2</a>',
