@@ -74,7 +74,7 @@ require(['vs/editor/editor.main'], function () {
         theme: 'WebHTML',
         automaticLayout: true,
         fontSize: 16,
-        fontFamily: `'Editor Mono Pro', 'Sevolt Emoji Flat', monospace`,
+        fontFamily: `'Editor Mono Pro', 'Sevolt Emoji Color', monospace`,
         scrollBeyondLastLine: true,
         minimap: { enabled: true },
         lineNumbers: 'on',
@@ -1028,6 +1028,29 @@ require(['vs/editor/editor.main'], function () {
         preview.srcdoc = html;
     });
 
+    function openPreviewPopup() {
+        // If already open, just focus it
+        if (previewPopupWindow && !previewPopupWindow.closed) {
+            previewPopupWindow.focus();
+            return;
+        }
+
+        previewPopupWindow = window.open(
+            '',
+            'LivePreviewPopup',
+            'width=800,height=600,resizable=yes,scrollbars=yes'
+        );
+
+        if (!previewPopupWindow) {
+            alert('Popup blocked! Please allow popups for this site.');
+            return;
+        }
+
+        previewPopupWindow.document.open();
+        previewPopupWindow.document.write(editor.getValue());
+        previewPopupWindow.document.close();
+    }
+
     updatePreview();
 
     function openFile() {
@@ -1097,9 +1120,21 @@ require(['vs/editor/editor.main'], function () {
         updatePreview();
     });
 
+    let previewPopupWindow = null;
+
     function updatePreview() {
         var preview = document.getElementById('preview');
-        preview.srcdoc = editor.getValue();
+        const html = editor.getValue();
+
+        // Update embedded preview
+        preview.srcdoc = html;
+
+        // Update popup preview if open
+        if (previewPopupWindow && !previewPopupWindow.closed) {
+            previewPopupWindow.document.open();
+            previewPopupWindow.document.write(html);
+            previewPopupWindow.document.close();
+        }
     }
 
     window.addEventListener('beforeunload', function(e) {
@@ -1109,6 +1144,10 @@ require(['vs/editor/editor.main'], function () {
             return confirmationMessage;
         }
     });
+
+    document.getElementById('previewPopup')
+    .addEventListener('click', openPreviewPopup);
+
 
     document.getElementById('lineWrapSelect').addEventListener('change', function() {
         var value = this.value;
