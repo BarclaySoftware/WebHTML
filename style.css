@@ -1,12 +1,12 @@
 :root {
     /* --ui-font: 'Wledig UI Sans', 'Rubisco Color Emoji', system-ui; */
-    --ui-font: system-ui;
-    --ui-font-symbols: 'IntelliWeb Symbols';
-    --ui-btn: #212121;
-    --ui-btn-hover: #3474f0;
+    --ui-font: 'Jupiter Sans Flex', sans-serif, system-ui;
+    /* --ui-font-symbols: 'IntelliWeb Symbols'; */
+    --ui-btn: #262626;
+    --ui-btn-hover: #bc5fd3;
     --ui-text: #ffffff;
-    --header: #f9fbfd;
-    --gutter: #c7c7c7;
+    --header: #1d1d1d;
+    --gutter: #4d4d4d;
     --preview: #ffffff;
 }
 
@@ -28,15 +28,6 @@ html, body {
     font-family: var(--ui-font) !important;
 }
 
-#logo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100px;
-    height: 100px;
-    z-index: 1;
-}
-
 #editor-container {
     flex: 1;
     display: flex;
@@ -45,7 +36,8 @@ html, body {
 }
 
 #editor {
-    width: 50%;
+    width: 100%;
+    /* width: 50%; */
     overflow: none;
 }
 
@@ -78,13 +70,13 @@ html, body {
 button {
     font-family: var(--ui-font);
     margin-right: 8px;
-    padding: 2px 6px;
+    padding: 6px 12px;
     font-size: 14px;
     cursor: pointer;
     background-color: var(--ui-btn);
     color: var(--ui-text);
     border: none;
-    border-radius: 6px;
+    border-radius: 4px;
 }
 
 button:hover {
@@ -93,8 +85,8 @@ button:hover {
 }
 
 select {
-    font-family: var(--ui-font-symbols);
-    font-size: 18px;
+    font-family: var(--ui-font);
+    font-size: 14px;
     color: var(--ui-text);
     background-color: var(--ui-btn);
     border: none;
@@ -106,12 +98,12 @@ select {
 
 #logo {
     margin-left: 10px;
-    padding-top: 8px;
+    padding-top: 10px;
     position: absolute;
-    top: 0;
+    top: 2px;
     left: 0;
     width: auto;
-    height: 30px;
+    height: 20px;
     z-index: 1;
 }
 
@@ -150,12 +142,13 @@ iframe {
 
     #editor {
         width: 100% !important;
-        height: 50%;
+        /* height: 50%; */
+        height: 100%;
     }
 
-    #preview {
+    /* #preview {
         width: 100% !important;
         height: 50%;
         border: none;
-    }
+    } */
 }

@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aurorasoft WebHTML</title>
     <link rel="shortcut icon" href="https://webhtml.pages.dev/cdn/branding/images/favicon/favicon.svg" type="image/x-icon">
+    <link rel="preconnect" href="https://fontstatic.pages.dev" crossorigin>
+    <link rel="stylesheet" href="https://fontstatic.pages.dev/storage/css/library.css">
     <script src="https://webhtml.pages.dev/cdn/scripts/resizer.js"></script>
     <script src="https://andorraeditor.pages.dev/library/andorra/min/vs/loader.js"></script>
-    <link rel="stylesheet" href="https://webhtml.pages.dev/cdn/branding/fonts/library.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,18 +21,18 @@
         <!-- <button title="Open in New Tab" id="previewInNewTab">open_in_new</button> -->
         <!-- <button title="Get Help" id="help">help</button> -->
         <!-- <button title="Save Dump..." id="saveDump">download</button> -->
-        <select title="Toggle Line Wrap" id="lineWrapSelect">
-            <option selected value="off">format_text_overflow</option>
-            <option value="on">format_text_wrap</option>
+        <!-- <select title="Toggle Line Wrap" id="lineWrapSelect">
+            <option selected value="off">Overflow</option>
+            <option value="on">Wrapped</option>
         </select>
         <select title="Toggle Minimap" id="minimapSelect">
-            <option value="on">directions</option>
-            <option value="off">directions_off</option>
-        </select>
+            <option value="on">Show</option>
+            <option value="off">Hide</option>
+        </select> -->
     </div>
     <div id="editor-container">
         <div id="editor" class="pane"></div>
-        <iframe id="preview" class="pane"></iframe>
+        <!-- <iframe id="preview" class="pane"></iframe> -->
     </div>
     <script src="script.js"></script>
 </body>

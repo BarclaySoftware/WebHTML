@@ -71,11 +71,11 @@ require(['vs/editor/editor.main'], function () {
     var editor = andorra.editor.create(document.getElementById('editor'), {
         value: ``,
         language: 'html',
-        theme: 'vs',
+        theme: 'vs-dark',
         automaticLayout: true,
         fontSize: 16,
         // fontFamily: `'IntelliWeb Mono', 'Rubisco Color Emoji', monospace`,
-        fontFamily: `monospace`,
+        fontFamily: `'Laurentia Code', monospace`,
         scrollBeyondLastLine: true,
         minimap: { enabled: true },
         lineNumbers: 'on',
@@ -115,23 +115,23 @@ require(['vs/editor/editor.main'], function () {
                 {
                     label: 'WebHTML Example Template',
                     kind: andorra.languages.CompletionItemKind.Snippet,
-                    insertText: `<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta http-equiv="X-UA-Compatible" content="IE=edge">\n    <meta name="generator" content="IntelliWeb">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <link rel="shortcut icon" href="https://intelliweb.pages.dev/cdn/branding/images/favicon/default.png" type="image/x-icon">\n    <title>My Webpage</title>\n    <style>\n        body {\n            font-family: sans-serif;\n        }\n    </style>\n</head>\n<body>\n    <h1>Hello World!</h1>\n    <p>This is my webpage text.</p>\n</body>\n</html>`,
+                    insertText: `<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta http-equiv="X-UA-Compatible" content="IE=edge">\n    <meta name="generator" content="Aurorasoft WebHTML">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <link rel="shortcut icon" href="https://webhtml.pages.dev/cdn/branding/images/favicon/favicon.svg" type="image/x-icon">\n    <title>My Webpage</title>\n    <style>\n        body {\n            font-family: sans-serif;\n        }\n    </style>\n</head>\n<body>\n    <h1>Hello World!</h1>\n    <p>This is my webpage text.</p>\n</body>\n</html>`,
                     insertTextRules: andorra.languages.CompletionItemInsertTextRule.InsertAsSnippet,
                     documentation: 'A basic, pre-filled HTML5 template from WebHTML.'
                 },
                 {
                     label: 'WebHTML Landing Page Template',
                     kind: andorra.languages.CompletionItemKind.Snippet,
-                    insertText: `<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta http-equiv="X-UA-Compatible" content="IE=edge">\n    <meta name="generator" content="IntelliWeb">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>My Webpage</title>\n    <link rel="shortcut icon" href="https://intelliweb.pages.dev/cdn/branding/images/favicon/default.png" type="image/x-icon">\n    <script type="module" src="https://webtelegraph.pages.dev/components/wledig.js"></script>\n    <style>\n        body {\n            font-family: sans-serif;\n            margin: 0;\n        }\n        h1, h2 {\n            text-align: center;\n        }\n        .blurb {\n            text-align: center;\n            line-height: 30px;\n        }\n        wledig-accordion-item {\n            font-family: sans-serif;\n        }\n        header {\n            display: flex;\n            align-items: center;\n            justify-content: space-between;\n            padding: 10px 20px;\n            border-bottom: 1px solid #ccc;\n        }\n        header img {\n            height: 30px;\n        }\n        header .buttons {\n            display: flex;\n            gap: 10px;\n        }\n        header button {\n            font-family: sans-serif;\n            font-weight: 700;\n            color: #ffffff;\n            background-color: #1f75fe;\n            transition: background-color 400ms;\n            border: none;\n            border-radius: 6px;\n            padding: 10px 10px;\n            cursor: pointer;\n        }\n        header button:hover {\n            background-color: #1cac78;\n        }\n        .content {\n            margin: 60px;\n        }\n    </style>\n</head>\n<body>\n    <header>\n        <img src="" alt="Logo">\n        <div class="buttons">\n            <a href=""><button>My Button 1</button></a>\n            <a href=""><button>My Button 2</button></a>\n        </div>\n    </header>\n    <div class="content">\n        <h1>Add a Catchy Headline Here</h1>\n\n        <p class="blurb">Explain a bit more about your company, service, or product here.</p>\n\n        <wledig-divider></wledig-divider>\n\n        <h4>Section Heading</h4>\n        <p>Add more information in the accordions below... if you want.</p>\n\n        <wledig-accordion>\n            <wledig-accordion-item>\n                <span slot="heading">Item 1</span>\n                <div class="panel">\n                    Panel one content\n                </div>\n            </wledig-accordion-item>\n            <wledig-accordion-item>\n                <span slot="heading">Item 2</span>\n                <div class="panel">\n                    Panel 2 content\n                </div>\n            </wledig-accordion-item>\n            <wledig-accordion-item>\n                <span slot="heading">Item 3</span>\n                <div class="panel">\n                    Panel 3 content\n                </div>\n            </wledig-accordion-item>\n            <wledig-accordion-item>\n                <span slot="heading">Item 4</span>\n                <div class="panel">\n                    Panel 4 content\n                </div>\n            </wledig-accordion-item>\n        </wledig-accordion>\n    </div>\n</body>\n</html>`,
+                    insertText: `<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta http-equiv="X-UA-Compatible" content="IE=edge">\n    <meta name="generator" content="Aurorasoft WebHTML">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>My Webpage</title>\n    <link rel="shortcut icon" href="https://webhtml.pages.dev/cdn/branding/images/favicon/favicon.svg" type="image/x-icon">\n    <script type="module" src="https://webtelegraph.pages.dev/components/wledig.js"></script>\n    <style>\n        body {\n            font-family: sans-serif;\n            margin: 0;\n        }\n        h1, h2 {\n            text-align: center;\n        }\n        .blurb {\n            text-align: center;\n            line-height: 30px;\n        }\n        wledig-accordion-item {\n            font-family: sans-serif;\n        }\n        header {\n            display: flex;\n            align-items: center;\n            justify-content: space-between;\n            padding: 10px 20px;\n            border-bottom: 1px solid #ccc;\n        }\n        header img {\n            height: 30px;\n        }\n        header .buttons {\n            display: flex;\n            gap: 10px;\n        }\n        header button {\n            font-family: sans-serif;\n            font-weight: 700;\n            color: #ffffff;\n            background-color: #1f75fe;\n            transition: background-color 400ms;\n            border: none;\n            border-radius: 6px;\n            padding: 10px 10px;\n            cursor: pointer;\n        }\n        header button:hover {\n            background-color: #1cac78;\n        }\n        .content {\n            margin: 60px;\n        }\n    </style>\n</head>\n<body>\n    <header>\n        <img src="" alt="Logo">\n        <div class="buttons">\n            <a href=""><button>My Button 1</button></a>\n            <a href=""><button>My Button 2</button></a>\n        </div>\n    </header>\n    <div class="content">\n        <h1>Add a Catchy Headline Here</h1>\n\n        <p class="blurb">Explain a bit more about your company, service, or product here.</p>\n\n        <wledig-divider></wledig-divider>\n\n        <h4>Section Heading</h4>\n        <p>Add more information in the accordions below... if you want.</p>\n\n        <wledig-accordion>\n            <wledig-accordion-item>\n                <span slot="heading">Item 1</span>\n                <div class="panel">\n                    Panel one content\n                </div>\n            </wledig-accordion-item>\n            <wledig-accordion-item>\n                <span slot="heading">Item 2</span>\n                <div class="panel">\n                    Panel 2 content\n                </div>\n            </wledig-accordion-item>\n            <wledig-accordion-item>\n                <span slot="heading">Item 3</span>\n                <div class="panel">\n                    Panel 3 content\n                </div>\n            </wledig-accordion-item>\n            <wledig-accordion-item>\n                <span slot="heading">Item 4</span>\n                <div class="panel">\n                    Panel 4 content\n                </div>\n            </wledig-accordion-item>\n        </wledig-accordion>\n    </div>\n</body>\n</html>`,
                     insertTextRules: andorra.languages.CompletionItemInsertTextRule.InsertAsSnippet,
-                    documentation: 'A basic langing page template from IntelliWeb using Wledig UI.'
+                    documentation: 'A basic langing page template from Aurorasoft WebHTML using Wledig UI.'
                 },
                 {
-                    label: 'IntelliWeb Blank Template',
+                    label: 'Aurorasoft WebHTML Blank Template',
                     kind: andorra.languages.CompletionItemKind.Snippet,
-                    insertText: '<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="generator" content="IntelliWeb">\n    <meta http-equiv="X-UA-Compatible" content="IE=edge">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>$1</title>\n    <link rel="shortcut icon" href="$2https://intelliweb.pages.dev/cdn/branding/images/favicon/default.png" type="image/x-icon">\n    <style>\n        $3\n    </style>\n</head>\n<body>\n    $4\n</body>\n</html>',
+                    insertText: '<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="generator" content="Aurorasoft WebHTML">\n    <meta http-equiv="X-UA-Compatible" content="IE=edge">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>$1</title>\n    <link rel="shortcut icon" href="$2https://webhtml.pages.dev/cdn/branding/images/favicon/favicon.svg" type="image/x-icon">\n    <style>\n        $3\n    </style>\n</head>\n<body>\n    $4\n</body>\n</html>',
                     insertTextRules: andorra.languages.CompletionItemInsertTextRule.InsertAsSnippet,
-                    documentation: 'IntelliWeb default HTML template.'
+                    documentation: 'Aurorasoft WebHTML default HTML template.'
                 },
                 {
                     label: 'a',
@@ -902,7 +902,7 @@ require(['vs/editor/editor.main'], function () {
         });
     }
 
-    const PREVIEW_TITLE = 'Preview - WebHTML';
+    const PREVIEW_TITLE = 'Preview - Aurorasoft WebHTML';
     const PREVIEW_FAVICON = 'https://webhtml.pages.dev/cdn/branding/images/favicon/favicon.svg';
 
     ensureFontsLoaded(() => {
@@ -918,7 +918,7 @@ require(['vs/editor/editor.main'], function () {
 
     editor.onDidChangeModelContent(() => {
         const html = editor.getValue();
-        preview.srcdoc = html;
+        // preview.srcdoc = html;
     });
 
     let previewPopupWindow = null;
@@ -934,7 +934,7 @@ require(['vs/editor/editor.main'], function () {
                 previewPopupWindow.close();
             }
 
-            restoreResizerPreview();
+            // restoreResizerPreview();
 
             popupPreviewActive = false;
             previewPopupWindow = null;
@@ -988,14 +988,14 @@ require(['vs/editor/editor.main'], function () {
     }
 
     function enableFullEditorMode() {
-        const preview = document.getElementById('preview');
+        // const preview = document.getElementById('preview');
         const editor = document.getElementById('editor');
         const editorContainer = document.getElementById('editor-container');
 
         // Hide preview completely
-        preview.style.display = 'none';
-        preview.style.width = '0';
-        preview.style.flex = '0 0 0';
+        // preview.style.display = 'none';
+        // preview.style.width = '0';
+        // preview.style.flex = '0 0 0';
 
         // Expand editor container
         editorContainer.style.width = '100%';
@@ -1023,35 +1023,35 @@ require(['vs/editor/editor.main'], function () {
         }
     }
 
-    function restoreResizerPreview() {
-        const preview = document.getElementById('preview');
-        const editor = document.getElementById('editor');
-        const editorContainer = document.getElementById('editor-container');
+    // function restoreResizerPreview() {
+    //     // const preview = document.getElementById('preview');
+    //     const editor = document.getElementById('editor');
+    //     const editorContainer = document.getElementById('editor-container');
 
-        // Restore styles
-        preview.style.display = '';
-        preview.style.width = '';
-        preview.style.flex = '';
+    //     // Restore styles
+    //     // preview.style.display = '';
+    //     // preview.style.width = '';
+    //     // preview.style.flex = '';
 
-        editorContainer.style.width = '';
-        editorContainer.style.flex = '';
+    //     editorContainer.style.width = '';
+    //     editorContainer.style.flex = '';
 
-        editor.style.width = '';
-        editor.style.flex = '';
+    //     editor.style.width = '';
+    //     editor.style.flex = '';
 
-        // Recreate Resizer
-        resizerInstance = Resizer(['#editor', '#preview'], {
-            sizes: [50, 50],
-            minSize: 0,
-            gutterSize: 8,
-            cursor: 'w-resize'
-        });
+    //     // Recreate Resizer
+    //     resizerInstance = Resizer(['#editor', '#preview'], {
+    //         sizes: [50, 50],
+    //         minSize: 0,
+    //         gutterSize: 8,
+    //         cursor: 'w-resize'
+    //     });
 
-        // Re-layout editor after DOM settles
-        setTimeout(() => {
-            editor.layout?.();
-        }, 0);
-    }
+    //     // Re-layout editor after DOM settles
+    //     setTimeout(() => {
+    //         editor.layout?.();
+    //     }, 0);
+    // }
 
     updatePreview();
 
@@ -1064,7 +1064,7 @@ require(['vs/editor/editor.main'], function () {
             var reader = new FileReader();
             reader.onload = function() {
                 editor.setValue(reader.result);
-                document.title = file.name + ' - IntelliWeb';
+                document.title = file.name + ' - Aurorasoft WebHTML';
                 updatePreview();
             };
             reader.readAsText(file);
@@ -1079,9 +1079,9 @@ require(['vs/editor/editor.main'], function () {
         var a = document.createElement('a');
         a.href = url;
         var currentDate = new Date().toISOString().slice(0, 19).replace(/[-T:/]/g, '');
-        var fileName = 'IntelliWeb_' + currentDate + '.html';
+        var fileName = 'WebHTML_' + currentDate + '.html';
         a.download = fileName;
-        document.title = fileName + ' - IntelliWeb';
+        document.title = fileName + ' - Aurorasoft WebHTML';
         document.body.appendChild(a);
         a.click();
         window.URL.revokeObjectURL(url);
@@ -1096,7 +1096,7 @@ require(['vs/editor/editor.main'], function () {
         var a = document.createElement('a');
         a.href = url;
         var currentDate = new Date().toISOString().slice(0, 19).replace(/[-T:/]/g, '');
-        var fileName = 'IntelliWeb_' + currentDate + '.dt';
+        var fileName = 'WebHTML_' + currentDate + '.dt';
         a.download = fileName;
         document.title = fileName;
         document.body.appendChild(a);
@@ -1129,9 +1129,9 @@ require(['vs/editor/editor.main'], function () {
         const html = editor.getValue();
 
         // Inline preview (only if visible)
-        if (!popupPreviewActive) {
-            document.getElementById('preview').srcdoc = html;
-        }
+        // if (!popupPreviewActive) {
+        //     document.getElementById('preview').srcdoc = html;
+        // }
 
         // Popup preview
         if (previewPopupWindow && !previewPopupWindow.closed) {
@@ -1161,20 +1161,20 @@ require(['vs/editor/editor.main'], function () {
         }
     });
 
-    document.getElementById('lineWrapSelect').addEventListener('change', function() {
-        var value = this.value;
-        editor.updateOptions({ wordWrap: value });
-    });
+    // document.getElementById('lineWrapSelect').addEventListener('change', function() {
+    //     var value = this.value;
+    //     editor.updateOptions({ wordWrap: value });
+    // });
 
     document
     .getElementById('previewPopup')
     .addEventListener('click', togglePreviewPopup);
 
 
-    document.getElementById('minimapSelect').addEventListener('change', function() {
-        var value = this.value;
-        editor.updateOptions({ minimap: { enabled: value === 'on' } });
-    });
+    // document.getElementById('minimapSelect').addEventListener('change', function() {
+    //     var value = this.value;
+    //     editor.updateOptions({ minimap: { enabled: value === 'on' } });
+    // });
 
     window.addEventListener('keydown', function(event) {
         if (event.ctrlKey && event.key === 's') {
@@ -1229,10 +1229,10 @@ require(['vs/editor/editor.main'], function () {
         }
     });
 
-    resizerInstance = Resizer(['#editor', '#preview'], {
-        sizes: [50, 50],
-        minSize: 0,
-        gutterSize: 8,
-        cursor: 'w-resize'
-    });
+    // resizerInstance = Resizer(['#editor', '#preview'], {
+    //     sizes: [50, 50],
+    //     minSize: 0,
+    //     gutterSize: 8,
+    //     cursor: 'w-resize'
+    // });
 });
