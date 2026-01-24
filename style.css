@@ -5,8 +5,8 @@
     --ui-btn: #212121;
     --ui-btn-hover: #3474f0;
     --ui-text: #ffffff;
-    --header: #000000;
-    --gutter: #000000;
+    --header: #f9fbfd;
+    --gutter: #c7c7c7;
     --preview: #ffffff;
 }
 
@@ -76,15 +76,15 @@ html, body {
 }
 
 button {
-    font-family: var(--ui-font-symbols);
+    font-family: var(--ui-font);
     margin-right: 8px;
     padding: 2px 6px;
-    font-size: 18px;
+    font-size: 14px;
     cursor: pointer;
     background-color: var(--ui-btn);
     color: var(--ui-text);
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
 }
 
 button:hover {
@@ -100,7 +100,8 @@ select {
     border: none;
     margin-right: 8px;
     padding: 2px 6px;
-    border-radius: 4px;
+    border-radius: 6px;
+    outline: none;
 }
 
 #logo {

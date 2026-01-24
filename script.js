@@ -1,6 +1,6 @@
 require.config({ paths: { 'vs': 'https://andorraeditor.pages.dev/library/andorra/min/vs' } });
 require(['vs/editor/editor.main'], function () {
-    andorra.editor.defineTheme('IntelliWeb', {
+    andorra.editor.defineTheme('WebHTML', {
         base: 'vs-dark',
         inherit: true,
         rules: [
@@ -71,10 +71,11 @@ require(['vs/editor/editor.main'], function () {
     var editor = andorra.editor.create(document.getElementById('editor'), {
         value: ``,
         language: 'html',
-        theme: 'IntelliWeb',
+        theme: 'vs',
         automaticLayout: true,
         fontSize: 16,
-        fontFamily: `'IntelliWeb Mono', 'Rubisco Color Emoji', monospace`,
+        // fontFamily: `'IntelliWeb Mono', 'Rubisco Color Emoji', monospace`,
+        fontFamily: `monospace`,
         scrollBeyondLastLine: true,
         minimap: { enabled: true },
         lineNumbers: 'on',
@@ -112,14 +113,14 @@ require(['vs/editor/editor.main'], function () {
         provideCompletionItems: function (model, position) {
             var suggestions = [
                 {
-                    label: 'IntelliWeb Example Template',
+                    label: 'WebHTML Example Template',
                     kind: andorra.languages.CompletionItemKind.Snippet,
                     insertText: `<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta http-equiv="X-UA-Compatible" content="IE=edge">\n    <meta name="generator" content="IntelliWeb">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <link rel="shortcut icon" href="https://intelliweb.pages.dev/cdn/branding/images/favicon/default.png" type="image/x-icon">\n    <title>My Webpage</title>\n    <style>\n        body {\n            font-family: sans-serif;\n        }\n    </style>\n</head>\n<body>\n    <h1>Hello World!</h1>\n    <p>This is my webpage text.</p>\n</body>\n</html>`,
                     insertTextRules: andorra.languages.CompletionItemInsertTextRule.InsertAsSnippet,
-                    documentation: 'A basic, pre-filled HTML5 template from IntelliWeb.'
+                    documentation: 'A basic, pre-filled HTML5 template from WebHTML.'
                 },
                 {
-                    label: 'IntelliWeb Landing Page Template',
+                    label: 'WebHTML Landing Page Template',
                     kind: andorra.languages.CompletionItemKind.Snippet,
                     insertText: `<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta http-equiv="X-UA-Compatible" content="IE=edge">\n    <meta name="generator" content="IntelliWeb">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>My Webpage</title>\n    <link rel="shortcut icon" href="https://intelliweb.pages.dev/cdn/branding/images/favicon/default.png" type="image/x-icon">\n    <script type="module" src="https://webtelegraph.pages.dev/components/wledig.js"></script>\n    <style>\n        body {\n            font-family: sans-serif;\n            margin: 0;\n        }\n        h1, h2 {\n            text-align: center;\n        }\n        .blurb {\n            text-align: center;\n            line-height: 30px;\n        }\n        wledig-accordion-item {\n            font-family: sans-serif;\n        }\n        header {\n            display: flex;\n            align-items: center;\n            justify-content: space-between;\n            padding: 10px 20px;\n            border-bottom: 1px solid #ccc;\n        }\n        header img {\n            height: 30px;\n        }\n        header .buttons {\n            display: flex;\n            gap: 10px;\n        }\n        header button {\n            font-family: sans-serif;\n            font-weight: 700;\n            color: #ffffff;\n            background-color: #1f75fe;\n            transition: background-color 400ms;\n            border: none;\n            border-radius: 6px;\n            padding: 10px 10px;\n            cursor: pointer;\n        }\n        header button:hover {\n            background-color: #1cac78;\n        }\n        .content {\n            margin: 60px;\n        }\n    </style>\n</head>\n<body>\n    <header>\n        <img src="" alt="Logo">\n        <div class="buttons">\n            <a href=""><button>My Button 1</button></a>\n            <a href=""><button>My Button 2</button></a>\n        </div>\n    </header>\n    <div class="content">\n        <h1>Add a Catchy Headline Here</h1>\n\n        <p class="blurb">Explain a bit more about your company, service, or product here.</p>\n\n        <wledig-divider></wledig-divider>\n\n        <h4>Section Heading</h4>\n        <p>Add more information in the accordions below... if you want.</p>\n\n        <wledig-accordion>\n            <wledig-accordion-item>\n                <span slot="heading">Item 1</span>\n                <div class="panel">\n                    Panel one content\n                </div>\n            </wledig-accordion-item>\n            <wledig-accordion-item>\n                <span slot="heading">Item 2</span>\n                <div class="panel">\n                    Panel 2 content\n                </div>\n            </wledig-accordion-item>\n            <wledig-accordion-item>\n                <span slot="heading">Item 3</span>\n                <div class="panel">\n                    Panel 3 content\n                </div>\n            </wledig-accordion-item>\n            <wledig-accordion-item>\n                <span slot="heading">Item 4</span>\n                <div class="panel">\n                    Panel 4 content\n                </div>\n            </wledig-accordion-item>\n        </wledig-accordion>\n    </div>\n</body>\n</html>`,
                     insertTextRules: andorra.languages.CompletionItemInsertTextRule.InsertAsSnippet,
@@ -901,11 +902,11 @@ require(['vs/editor/editor.main'], function () {
         });
     }
 
-    const PREVIEW_TITLE = 'Preview - IntelliWeb';
-    const PREVIEW_FAVICON = 'https://intelliweb.pages.dev/cdn/branding/images/favicon/default.png';
+    const PREVIEW_TITLE = 'Preview - WebHTML';
+    const PREVIEW_FAVICON = 'https://webhtml.pages.dev/cdn/branding/images/favicon/favicon.svg';
 
     ensureFontsLoaded(() => {
-        console.log("IntelliWeb UI Manager: Fonts applied successfully!");
+        console.log("WebHTML UI Manager: Fonts applied successfully!");
     });
 
     // Close any orphaned preview popups on load
@@ -938,7 +939,7 @@ require(['vs/editor/editor.main'], function () {
             popupPreviewActive = false;
             previewPopupWindow = null;
 
-            button.textContent = 'open_in_browser';
+            button.textContent = 'Run';
             updatePreview();
             return;
         }
@@ -973,7 +974,7 @@ require(['vs/editor/editor.main'], function () {
         enableFullEditorMode();
 
         popupPreviewActive = true;
-        button.textContent = 'dock_to_left';
+        button.textContent = 'Stop';
 
         // Detect manual popup close
         const popupCloseInterval = setInterval(() => {
@@ -1195,13 +1196,13 @@ require(['vs/editor/editor.main'], function () {
         }
     });
 
-    document.getElementById('previewInNewTab').addEventListener('click', function() {
-        var newTab = window.open();
-        var content = editor.getValue();
-        newTab.document.open();
-        newTab.document.write(content);
-        newTab.document.close();
-    });
+    // document.getElementById('previewInNewTab').addEventListener('click', function() {
+    //     var newTab = window.open();
+    //     var content = editor.getValue();
+    //     newTab.document.open();
+    //     newTab.document.write(content);
+    //     newTab.document.close();
+    // });
 
     // UNUSED help button... more later??
     // document.getElementById('help').addEventListener('click', function() {
