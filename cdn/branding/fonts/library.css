@@ -1,0 +1,37 @@
+/* Emoji */
+@font-face {
+    font-family: 'Rubisco Color Emoji';
+    src: url(https://intelliweb.pages.dev/cdn/branding/fonts/emoji/RubiscoColorEmoji.ttf);
+}
+
+/* Icons */
+@font-face {
+    font-family: 'IntelliWeb Symbols';
+    src: url(https://intelliweb.pages.dev/cdn/branding/fonts/symbols/IntelliWebSymbols-Regular.ttf);
+}
+
+/* Mono */
+@font-face {
+    font-family: 'IntelliWeb Mono';
+    src: url(https://intelliweb.pages.dev/cdn/branding/fonts/mono/IntelliWebMono[wght].ttf);
+    font-style: normal;
+}
+@font-face {
+    font-family: 'IntelliWeb Mono';
+    src: url(https://intelliweb.pages.dev/cdn/branding/fonts/mono/IntelliWebMono-Italic[wght].ttf);
+    font-style: italic;
+}
+
+/* Wledig UI Sans */
+@font-face {
+    font-family: 'Wledig UI Sans';
+    src: url(https://intelliweb.pages.dev/cdn/branding/fonts/wlediguisans/WledigUISans-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Wledig UI Sans';
+    src: url(https://intelliweb.pages.dev/cdn/branding/fonts/wlediguisans/WledigUISans-Bold.ttf);
+    font-weight: 700;
+    font-style: normal;
+}

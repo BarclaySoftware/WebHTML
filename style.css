@@ -1,5 +1,17 @@
+:root {
+    /* --ui-font: 'Wledig UI Sans', 'Rubisco Color Emoji', system-ui; */
+    --ui-font: system-ui;
+    --ui-font-symbols: 'IntelliWeb Symbols';
+    --ui-btn: #212121;
+    --ui-btn-hover: #3474f0;
+    --ui-text: #ffffff;
+    --header: #000000;
+    --gutter: #000000;
+    --preview: #ffffff;
+}
+
 html, body {
-    font-family: 'Dyfodol Text', 'Sevolt Emoji Color', system-ui, Arial, Helvetica, sans-serif;
+    font-family: var(--ui-font);
     margin: 0;
     padding: 0;
     height: 100%;
@@ -8,8 +20,12 @@ html, body {
     flex-direction: column;
 }
 
+/* .andorra-editor {
+    --andorra-monospace-font: 'IntelliWeb Mono', "SF Mono", Andorra, Menlo, Consolas, "Ubuntu Mono", "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace !important;
+} */
+
 .andorra-inputbox>.ibwrapper>.input {
-    font-family: 'Dyfodol Text', 'Sevolt Emoji Color', system-ui, Arial, Helvetica, sans-serif !important;
+    font-family: var(--ui-font) !important;
 }
 
 #logo {
@@ -34,13 +50,14 @@ html, body {
 }
 
 .gutter {
-    background-color: #000000;
+    background-color: var(--gutter);
     cursor: w-resize;
     width: 8px;
     transition: 0.6s background-color;
 }
+
 .gutter:hover {
-    background-color: #3474f0;
+    background-color: var(--ui-btn-hover);
     cursor: w-resize;
     width: 8px;
 }
@@ -48,41 +65,41 @@ html, body {
 #preview {
     flex: 1;
     overflow: auto;
-    background-color: #ffffff;
+    background-color: var(--preview);
 }
 
 .button-container {
     display: flex;
     justify-content: flex-end;
     padding: 8px;
-    background-color: #000000;
+    background-color: var(--header);
 }
 
 button {
-    font-family: 'Dyfodol Text', 'Sevolt Emoji Color', system-ui, Arial, Helvetica, sans-serif;
+    font-family: var(--ui-font-symbols);
     margin-right: 8px;
-    padding: 6px 12px;
-    font-size: 14px;
+    padding: 2px 6px;
+    font-size: 18px;
     cursor: pointer;
-    background-color: #212121;
-    color: #ffffff;
+    background-color: var(--ui-btn);
+    color: var(--ui-text);
     border: none;
     border-radius: 4px;
 }
 
 button:hover {
-    color: #ffffff;
-    background-color: #3474f0;
+    color: var(--ui-text);
+    background-color: var(--ui-btn-hover);
 }
 
 select {
-    font-family: 'Dyfodol Text', 'Sevolt Emoji Color', system-ui, Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    color: #ffffff;
-    background-color: #212121;
+    font-family: var(--ui-font-symbols);
+    font-size: 18px;
+    color: var(--ui-text);
+    background-color: var(--ui-btn);
     border: none;
     margin-right: 8px;
-    padding: 6px 12px;
+    padding: 2px 6px;
     border-radius: 4px;
 }
 
@@ -104,11 +121,26 @@ iframe {
 }
 
 @media (max-width: 768px) {
+    #logo {
+        position: relative;
+        left: auto;
+        top: auto;
+        margin: 0 auto 16px auto;
+        display: block;
+        height: 30px;
+        z-index: 0;
+    }
+
     .button-container {
-        flex-direction: column;
-        align-items: stretch;
         justify-content: center;
-        padding: 12px;
+        flex-wrap: wrap;
+        padding-top: 0;
+        padding-bottom: 12px;
+    }
+
+    body {
+        background-color: var(--header);
+        overflow: auto;
     }
 
     #editor-container {
@@ -116,12 +148,12 @@ iframe {
     }
 
     #editor {
-    width: 100% !important;
-        height: 50%; 
+        width: 100% !important;
+        height: 50%;
     }
 
     #preview {
-        width: 100%;
+        width: 100% !important;
         height: 50%;
         border: none;
     }

@@ -4,30 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebHTML</title>
-    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
-    <script src="https://cdn.jsdelivr.net/npm/split.js/dist/split.min.js"></script>
+    <title>Aurorasoft WebHTML</title>
+    <link rel="shortcut icon" href="https://webhtml.pages.dev/cdn/branding/images/favicon/favicon.svg" type="image/x-icon">
+    <script src="https://webhtml.pages.dev/cdn/scripts/resizer.js"></script>
     <script src="https://andorraeditor.pages.dev/library/andorra/min/vs/loader.js"></script>
-    <link rel="stylesheet" href="https://fontsapi.pages.dev/catalogue.css">
-    <link rel="stylesheet" href="assets/fonts/library.css">
-    <link rel="stylesheet" href="https://aurorasoft.pages.dev/fonts/emojis.css">
+    <link rel="stylesheet" href="https://webhtml.pages.dev/cdn/branding/fonts/library.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <img id="logo" src="assets/images/word.svg" alt="Aurorasoft WebHTML 2">
+    <img id="logo" src="https://webhtml.pages.dev/cdn/branding/images/logo/wordmark.svg" alt="WebHTML">
     <div class="button-container">
-        <button title="Open an HTML file" id="openButton">📂</button>
-        <button title="Download this file as HTML" id="saveButton">💾</button>
-        <button id="previewPopup">Open Live Preview Popup</button>
-        <!-- <button title="Get help" id="help">❓</button> -->
-        <button title="Save this file as Dump" id="saveDump">⬇️</button>
-        <select title="Toggle line wrap" id="lineWrapSelect">
-            <option selected value="off">No line wrap</option>
-            <option value="on">Wrap lines</option>
+        <button title="Open HTML..." id="openButton">folder_open</button>
+        <button title="Save HTML..." id="saveButton">save</button>
+        <button title="Toggle Preview Window" id="previewPopup">open_in_browser</button>
+        <button title="Open in New Tab" id="previewInNewTab">open_in_new</button>
+        <!-- <button title="Get Help" id="help">help</button> -->
+        <!-- <button title="Save Dump..." id="saveDump">download</button> -->
+        <select title="Toggle Line Wrap" id="lineWrapSelect">
+            <option selected value="off">format_text_overflow</option>
+            <option value="on">format_text_wrap</option>
         </select>
-        <select title="Toggle the minimap" id="minimapSelect">
-            <option value="on">Minimap on</option>
-            <option value="off">Minimap off</option>
+        <select title="Toggle Minimap" id="minimapSelect">
+            <option value="on">directions</option>
+            <option value="off">directions_off</option>
         </select>
     </div>
     <div id="editor-container">
