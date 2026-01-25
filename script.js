@@ -75,7 +75,7 @@ require(['vs/editor/editor.main'], function () {
         automaticLayout: true,
         fontSize: 16,
         // fontFamily: `'IntelliWeb Mono', 'Rubisco Color Emoji', monospace`,
-        fontFamily: `'Laurentia Code', monospace`,
+        fontFamily: `'Jupiter Sans Mono', monospace`,
         scrollBeyondLastLine: true,
         minimap: { enabled: true },
         lineNumbers: 'on',
