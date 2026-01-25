@@ -20,9 +20,9 @@ html, body {
     flex-direction: column;
 }
 
-/* .andorra-editor {
-    --andorra-monospace-font: 'IntelliWeb Mono', "SF Mono", Andorra, Menlo, Consolas, "Ubuntu Mono", "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace !important;
-} */
+.andorra-editor {
+    --andorra-monospace-font: 'Laurentia Code', "SF Mono", Andorra, Menlo, Consolas, "Ubuntu Mono", "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace !important;
+}
 
 .andorra-inputbox>.ibwrapper>.input {
     font-family: var(--ui-font) !important;
