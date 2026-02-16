@@ -64,7 +64,7 @@ require([ 'vs/editor/editor.main', 'vs/language/typescript/andorra.contribution'
 
         scrollBeyondLastLine: true,
         showDeprecated: true,
-        showFoldingControls: 'always',
+        showFoldingControls: 'hover',
         snippetSuggestions: 'inline',
         suggestOnTriggerCharacters: true,
         suggestSelection: 'first',

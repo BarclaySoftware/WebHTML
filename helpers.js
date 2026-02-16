@@ -4,32 +4,25 @@ require([ 'vs/editor/editor.main', 'vs/language/typescript/andorra.contribution'
         provideCompletionItems: function () {
             var suggestions = [
                 {
-                    label: 'Basic HTML5 Outline',
+                    label: 'HTML5 Outline',
                     kind: andorra.languages.CompletionItemKind.Snippet,
-                    insertText: `<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="generator" content="Aurorasoft WebHTML">\n    <meta http-equiv="X-UA-Compatible" content="IE=edge">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title></title>\n    <link rel="shortcut icon" href="" type="image/x-icon">\n    <style>\n        \n    </style>\n</head>\n<body>\n    \n</body>\n</html>`,
+                    insertText: `<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="generator" content="Aurorasoft WebHTML">\n    <meta http-equiv="X-UA-Compatible" content="IE=edge">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>$1</title>\n    <link rel="shortcut icon" href="$2" type="image/x-icon">\n    <style>\n        $3\n    </style>\n</head>\n<body>\n    $4\n</body>\n</html>`,
                     insertTextRules: andorra.languages.CompletionItemInsertTextRule.InsertAsSnippet,
-                    documentation: 'A basic HTML5 website outline.'
+                    documentation: 'A simple HTML5 webpage outline.'
                 },
                 {
                     label: 'WebHTML Example Template',
                     kind: andorra.languages.CompletionItemKind.Snippet,
                     insertText: `<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta http-equiv="X-UA-Compatible" content="IE=edge">\n    <meta name="generator" content="Aurorasoft WebHTML">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <link rel="shortcut icon" href="https://webhtml.pages.dev/cdn/branding/images/favicon/favicon.svg" type="image/x-icon">\n    <title>My Webpage</title>\n    <style>\n        body {\n            font-family: sans-serif;\n        }\n    </style>\n</head>\n<body>\n    <h1>Hello World!</h1>\n    <p>This is my webpage text.</p>\n</body>\n</html>`,
                     insertTextRules: andorra.languages.CompletionItemInsertTextRule.InsertAsSnippet,
-                    documentation: 'A basic, pre-filled HTML5 template from WebHTML.'
+                    documentation: 'Aurorasoft WebHTML default template.'
                 },
                 {
                     label: 'WebHTML Landing Page Template',
                     kind: andorra.languages.CompletionItemKind.Snippet,
                     insertText: `<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta http-equiv="X-UA-Compatible" content="IE=edge">\n    <meta name="generator" content="Aurorasoft WebHTML">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>My Webpage</title>\n    <link rel="shortcut icon" href="https://webhtml.pages.dev/cdn/branding/images/favicon/favicon.svg" type="image/x-icon">\n    <script type="module" src="https://webtelegraph.pages.dev/components/wledig.js"></script>\n    <style>\n        body {\n            font-family: sans-serif;\n            margin: 0;\n        }\n        h1, h2 {\n            text-align: center;\n        }\n        .blurb {\n            text-align: center;\n            line-height: 30px;\n        }\n        wledig-accordion-item {\n            font-family: sans-serif;\n        }\n        header {\n            display: flex;\n            align-items: center;\n            justify-content: space-between;\n            padding: 10px 20px;\n            border-bottom: 1px solid #ccc;\n        }\n        header img {\n            height: 30px;\n        }\n        header .buttons {\n            display: flex;\n            gap: 10px;\n        }\n        header button {\n            font-family: sans-serif;\n            font-weight: 700;\n            color: #ffffff;\n            background-color: #1f75fe;\n            transition: background-color 400ms;\n            border: none;\n            border-radius: 6px;\n            padding: 10px 10px;\n            cursor: pointer;\n        }\n        header button:hover {\n            background-color: #1cac78;\n        }\n        .content {\n            margin: 60px;\n        }\n    </style>\n</head>\n<body>\n    <header>\n        <img src="" alt="Logo">\n        <div class="buttons">\n            <a href=""><button>My Button 1</button></a>\n            <a href=""><button>My Button 2</button></a>\n        </div>\n    </header>\n    <div class="content">\n        <h1>Add a Catchy Headline Here</h1>\n\n        <p class="blurb">Explain a bit more about your company, service, or product here.</p>\n\n        <wledig-divider></wledig-divider>\n\n        <h4>Section Heading</h4>\n        <p>Add more information in the accordions below... if you want.</p>\n\n        <wledig-accordion>\n            <wledig-accordion-item>\n                <span slot="heading">Item 1</span>\n                <div class="panel">\n                    Panel one content\n                </div>\n            </wledig-accordion-item>\n            <wledig-accordion-item>\n                <span slot="heading">Item 2</span>\n                <div class="panel">\n                    Panel 2 content\n                </div>\n            </wledig-accordion-item>\n            <wledig-accordion-item>\n                <span slot="heading">Item 3</span>\n                <div class="panel">\n                    Panel 3 content\n                </div>\n            </wledig-accordion-item>\n            <wledig-accordion-item>\n                <span slot="heading">Item 4</span>\n                <div class="panel">\n                    Panel 4 content\n                </div>\n            </wledig-accordion-item>\n        </wledig-accordion>\n    </div>\n</body>\n</html>`,
                     insertTextRules: andorra.languages.CompletionItemInsertTextRule.InsertAsSnippet,
-                    documentation: 'A basic langing page template from Aurorasoft WebHTML using Wledig UI.'
-                },
-                {
-                    label: 'WebHTML Blank Template',
-                    kind: andorra.languages.CompletionItemKind.Snippet,
-                    insertText: '<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="generator" content="Aurorasoft WebHTML">\n    <meta http-equiv="X-UA-Compatible" content="IE=edge">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>$1</title>\n    <link rel="shortcut icon" href="$2https://webhtml.pages.dev/cdn/branding/images/favicon/favicon.svg" type="image/x-icon">\n    <style>\n        $3\n    </style>\n</head>\n<body>\n    $4\n</body>\n</html>',
-                    insertTextRules: andorra.languages.CompletionItemInsertTextRule.InsertAsSnippet,
-                    documentation: 'Aurorasoft WebHTML default HTML template.'
+                    documentation: 'Aurorasoft WebHTML landing page template (uses Aurorasoft Wledig UI)'
                 },
                 {
                     label: 'a',
