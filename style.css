@@ -1,10 +1,8 @@
 :root {
-    /* --ui-font: 'Wledig UI Sans', 'Rubisco Color Emoji', system-ui; */
-    --ui-font: 'Jupiter Sans Flex', sans-serif, system-ui;
-    /* --ui-font-symbols: 'IntelliWeb Symbols'; */
-    --ui-btn: #262626;
-    --ui-btn-hover: #bc5fd3;
-    --ui-text: #ffffff;
+    --ui-font: 'Sevolt UI', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+    --btn-color: #262626;
+    --btn-color-hover: #bc5fd3;
+    --text-color: #ffffff;
     --header: #1d1d1d;
     --gutter: #4d4d4d;
     --preview: #ffffff;
@@ -21,11 +19,9 @@ html, body {
 }
 
 .andorra-editor {
+    --andorra-sans-font: 'Sevolt UI', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
     --andorra-monospace-font: 'Laurentia Code', "SF Mono", Andorra, Menlo, Consolas, "Ubuntu Mono", "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace !important;
-}
-
-.andorra-inputbox>.ibwrapper>.input {
-    font-family: var(--ui-font) !important;
+    font-family: var(--andorra-sans-font) !important;
 }
 
 #editor-container {
@@ -49,7 +45,7 @@ html, body {
 }
 
 .gutter:hover {
-    background-color: var(--ui-btn-hover);
+    background-color: var(--btn-color-hover);
     cursor: w-resize;
     width: 8px;
 }
@@ -68,27 +64,27 @@ html, body {
 }
 
 button {
-    font-family: var(--ui-font);
+    font-family: var(--andorra-sans-font);
     margin-right: 8px;
     padding: 6px 12px;
     font-size: 14px;
     cursor: pointer;
-    background-color: var(--ui-btn);
-    color: var(--ui-text);
+    background-color: var(--btn-color);
+    color: var(--text-color);
     border: none;
     border-radius: 4px;
 }
 
 button:hover {
-    color: var(--ui-text);
-    background-color: var(--ui-btn-hover);
+    color: var(--text-color);
+    background-color: var(--btn-color-hover);
 }
 
 select {
-    font-family: var(--ui-font);
+    font-family: var(--andorra-sans-font);
     font-size: 14px;
-    color: var(--ui-text);
-    background-color: var(--ui-btn);
+    color: var(--text-color);
+    background-color: var(--btn-color);
     border: none;
     margin-right: 8px;
     padding: 2px 6px;

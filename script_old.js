@@ -1,5 +1,5 @@
-require.config({ paths: { 'vs': 'https://apicenter.pages.dev/libraries/andorra/min/vs' } });
-require([ 'vs/editor/editor.main', 'vs/language/typescript/andorra.contribution' ], function () {
+require.config({ paths: { 'vs': 'https://andorraeditor.pages.dev/library/andorra/min/vs' } });
+require(['vs/editor/editor.main'], function () {
     andorra.editor.defineTheme('WebHTML', {
         base: 'vs-dark',
         inherit: true,
@@ -74,7 +74,8 @@ require([ 'vs/editor/editor.main', 'vs/language/typescript/andorra.contribution'
         theme: 'vs-dark',
         automaticLayout: true,
         fontSize: 16,
-        fontFamily: `'Laurentia Code', monospace`,
+        // fontFamily: `'IntelliWeb Mono', 'Rubisco Color Emoji', monospace`,
+        fontFamily: `'Jupiter Sans Mono', monospace`,
         scrollBeyondLastLine: true,
         minimap: { enabled: true },
         lineNumbers: 'on',
@@ -85,15 +86,15 @@ require([ 'vs/editor/editor.main', 'vs/language/typescript/andorra.contribution'
         acceptSuggestionOnEnter: 'on',
         tabCompletion: 'on',
         cursorSmoothCaretAnimation: 'on',
-        snippetSuggestions: 'inline',
+        snippetSuggestions: 'bottom',
         autoClosingComments: 'always',
         matchBrackets: 'always',
         multiCursorModifier: 'alt',
         multiCursorPaste: 'full',
-        showFoldingControls: 'always',
+        showFoldingControls: 'always', // mouseover
         suggestSelection: 'first',
         unusualLineTerminators: 'prompt',
-        cursorStyle: 'line',
+        cursorStyle: 'line', // underline, block
         autoSurround: 'brackets',
         colorDecoratorActivatedOn: 'clickAndHover',
         cursorSurroundingLinesStyle: 'default',
@@ -102,52 +103,42 @@ require([ 'vs/editor/editor.main', 'vs/language/typescript/andorra.contribution'
         multiCursorLimit: 1000,
         occurrencesHighlight: 'singleFile',
         peekWidgetDefaultFocus: 'editor',
+        // renderLineHighlight: 'gutter',
         renderWhitespace: 'selection',
         wordBreak: 'normal',
         wrappingStrategy: 'advanced',
-        mouseWheelZoom: true,
-        cursorBlinking: "blink",
-        colorDecorators: true,
-        colorDecoratorsActivatedOn: "hover",
-        definitionLinkOpensInPeek: true,
-        quickSuggestionsDelay: 0,
-        contextmenu: true,
-        hover: { enabled: true },
-        dragAndDrop: true,
-        dropIntoEditor: { enabled: true, showDropSelector: true },
-        editContext: true,
-        comments: { insertSpace: true },
-        copyWithSyntaxHighlighting: true,
-        cursorSmoothCaretAnimation: "on",
-        defaultColorDecorators: "always",
-        definitionLinkOpensInPeek: true,
-        find: { cursorMoveOnType: true, findOnType: true },
-        formatOnPaste: true,
-        formatOnType: true,
-        links: true,
-        parameterHints: { cycle: true, enabled: true },
-        placeholder: "Start writing HTML code...",
-        showDeprecated: true,
-        tabFocusMode: true,
-        gotoLocation: { multiple: "peek" },
-        lightbulb: { enabled: true },
-        codeActionsOnSave: { "source.fixAll": true, "source.organizeImports": true },
-        codeActionsOn: { 'editor': 'always' },
     });
 
     // Ensure any custom fonts load properly.
-    function ensureFontsLoaded(callback) { document.fonts.ready.then(() => { andorra.editor.remeasureFonts(); callback(); }); }
-    ensureFontsLoaded(() => { console.log("WebHTML UI Manager: Fonts applied successfully!"); });
-    editor.onDidChangeModelContent(() => { const html = editor.getValue(); /* preview.srcdoc = html; */ });
+    function ensureFontsLoaded(callback) {
+        document.fonts.ready.then(() => {
+            andorra.editor.remeasureFonts();
+            callback();
+        });
+    }
 
     const PREVIEW_TITLE = 'Preview - Aurorasoft WebHTML';
     const PREVIEW_FAVICON = 'https://webhtml.pages.dev/cdn/branding/images/favicon/favicon.svg';
 
+    ensureFontsLoaded(() => {
+        console.log("WebHTML UI Manager: Fonts applied successfully!");
+    });
+
     // Close any orphaned preview popups on load
-    try { if (window.opener === null && window.name === 'LivePreviewPopup') { window.close(); } } catch (e) {}
+    try {
+        if (window.opener === null && window.name === 'LivePreviewPopup') {
+            window.close();
+        }
+    } catch (e) {}
+
+    editor.onDidChangeModelContent(() => {
+        const html = editor.getValue();
+        // preview.srcdoc = html;
+    });
 
     let previewPopupWindow = null;
     let popupPreviewActive = false;
+    let resizerInstance = null;
 
     function togglePreviewPopup() {
         const button = document.getElementById('previewPopup');
@@ -157,6 +148,8 @@ require([ 'vs/editor/editor.main', 'vs/language/typescript/andorra.contribution'
             if (previewPopupWindow && !previewPopupWindow.closed) {
                 previewPopupWindow.close();
             }
+
+            // restoreResizerPreview();
 
             popupPreviewActive = false;
             previewPopupWindow = null;
@@ -199,7 +192,14 @@ require([ 'vs/editor/editor.main', 'vs/language/typescript/andorra.contribution'
         button.textContent = 'Stop';
 
         // Detect manual popup close
-        const popupCloseInterval = setInterval(() => { if (!previewPopupWindow || previewPopupWindow.closed) { clearInterval(popupCloseInterval); if (popupPreviewActive) { togglePreviewPopup(); } } }, 500);
+        const popupCloseInterval = setInterval(() => {
+            if (!previewPopupWindow || previewPopupWindow.closed) {
+                clearInterval(popupCloseInterval);
+                if (popupPreviewActive) {
+                    togglePreviewPopup();
+                }
+            }
+        }, 500);
     }
 
     function enableFullEditorMode() {
@@ -220,6 +220,12 @@ require([ 'vs/editor/editor.main', 'vs/language/typescript/andorra.contribution'
         editor.style.width = '100%';
         editor.style.flex = '1 1 100%';
 
+        // Kill Resizer.js
+        if (resizerInstance) {
+            resizerInstance.destroy();
+            resizerInstance = null;
+        }
+
         // Force editor to re-layout (VERY important)
         setTimeout(() => {
             editor.layout?.();
@@ -231,6 +237,36 @@ require([ 'vs/editor/editor.main', 'vs/language/typescript/andorra.contribution'
             previewPopupWindow.close();
         }
     }
+
+    // function restoreResizerPreview() {
+    //     // const preview = document.getElementById('preview');
+    //     const editor = document.getElementById('editor');
+    //     const editorContainer = document.getElementById('editor-container');
+
+    //     // Restore styles
+    //     // preview.style.display = '';
+    //     // preview.style.width = '';
+    //     // preview.style.flex = '';
+
+    //     editorContainer.style.width = '';
+    //     editorContainer.style.flex = '';
+
+    //     editor.style.width = '';
+    //     editor.style.flex = '';
+
+    //     // Recreate Resizer
+    //     resizerInstance = Resizer(['#editor', '#preview'], {
+    //         sizes: [50, 50],
+    //         minSize: 0,
+    //         gutterSize: 8,
+    //         cursor: 'w-resize'
+    //     });
+
+    //     // Re-layout editor after DOM settles
+    //     setTimeout(() => {
+    //         editor.layout?.();
+    //     }, 0);
+    // }
 
     updatePreview();
 
@@ -268,7 +304,22 @@ require([ 'vs/editor/editor.main', 'vs/language/typescript/andorra.contribution'
         isModified = false;
     }
 
-    // function saveDump() { var content = editor.getValue(); var blob = new Blob([content], { type: 'text/' }); var url = URL.createObjectURL(blob); var a = document.createElement('a'); a.href = url; var currentDate = new Date().toISOString().slice(0, 19).replace(/[-T:/]/g, ''); var fileName = 'WebHTML_' + currentDate + '.dt'; a.download = fileName; document.title = fileName; document.body.appendChild(a); a.click(); window.URL.revokeObjectURL(url); document.body.removeChild(a); isModified = false; }
+    function saveDump() {
+        var content = editor.getValue();
+        var blob = new Blob([content], { type: 'text/' });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        var currentDate = new Date().toISOString().slice(0, 19).replace(/[-T:/]/g, '');
+        var fileName = 'WebHTML_' + currentDate + '.dt';
+        a.download = fileName;
+        document.title = fileName;
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+        document.body.removeChild(a);
+        isModified = false;
+    }
 
     document.getElementById('openButton').addEventListener('click', openFile);
     document.getElementById('saveButton').addEventListener('click', saveFile);
@@ -290,7 +341,7 @@ require([ 'vs/editor/editor.main', 'vs/language/typescript/andorra.contribution'
     });
 
     function updatePreview() {
-        // const html = editor.getValue();
+        const html = editor.getValue();
 
         // Inline preview (only if visible)
         // if (!popupPreviewActive) {
@@ -317,16 +368,28 @@ require([ 'vs/editor/editor.main', 'vs/language/typescript/andorra.contribution'
         }
     }
 
-    window.addEventListener('beforeunload', function(e) { if (isModified) { var confirmationMessage = 'You have unsaved changes. Are you sure you want to leave?'; e.returnValue = confirmationMessage; return confirmationMessage; } });
+    window.addEventListener('beforeunload', function(e) {
+        if (isModified) {
+            var confirmationMessage = 'You have unsaved changes. Are you sure you want to leave?';
+            e.returnValue = confirmationMessage;
+            return confirmationMessage;
+        }
+    });
 
-    // document.getElementById('lineWrapSelect').addEventListener('change', function() { var value = this.value; editor.updateOptions({ wordWrap: value }); });
+    // document.getElementById('lineWrapSelect').addEventListener('change', function() {
+    //     var value = this.value;
+    //     editor.updateOptions({ wordWrap: value });
+    // });
 
     document
     .getElementById('previewPopup')
     .addEventListener('click', togglePreviewPopup);
 
 
-    // document.getElementById('minimapSelect').addEventListener('change', function() { var value = this.value; editor.updateOptions({ minimap: { enabled: value === 'on' } }); });
+    // document.getElementById('minimapSelect').addEventListener('change', function() {
+    //     var value = this.value;
+    //     editor.updateOptions({ minimap: { enabled: value === 'on' } });
+    // });
 
     window.addEventListener('keydown', function(event) {
         if (event.ctrlKey && event.key === 's') {
@@ -348,9 +411,18 @@ require([ 'vs/editor/editor.main', 'vs/language/typescript/andorra.contribution'
         }
     });
 
-    // document.getElementById('previewInNewTab').addEventListener('click', function() { var newTab = window.open(); var content = editor.getValue(); newTab.document.open(); newTab.document.write(content); newTab.document.close(); });
+    // document.getElementById('previewInNewTab').addEventListener('click', function() {
+    //     var newTab = window.open();
+    //     var content = editor.getValue();
+    //     newTab.document.open();
+    //     newTab.document.write(content);
+    //     newTab.document.close();
+    // });
 
-    // document.getElementById('help').addEventListener('click', function() { window.open("https://www.google.com") });
+    // UNUSED help button... more later??
+    // document.getElementById('help').addEventListener('click', function() {
+    //     window.open("https://www.google.com")
+    // });
 
     var editorContainer = document.getElementById('editor-container');
     var editorElement = document.getElementById('editor');
@@ -371,4 +443,11 @@ require([ 'vs/editor/editor.main', 'vs/language/typescript/andorra.contribution'
             document.body.style.cursor = 'default';
         }
     });
+
+    // resizerInstance = Resizer(['#editor', '#preview'], {
+    //     sizes: [50, 50],
+    //     minSize: 0,
+    //     gutterSize: 8,
+    //     cursor: 'w-resize'
+    // });
 });
