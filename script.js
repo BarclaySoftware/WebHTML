@@ -216,6 +216,7 @@ require([ 'vs/editor/editor.main', 'vs/language/typescript/andorra.contribution'
         }
     });
 
-    var editorContainer = document.getElementById('editor-container');
-    var editorElement = document.getElementById('editor');
+    document.getElementById('help').addEventListener('click', function() {
+        window.open("https://aurorasoft.pages.dev/help/webhtml/")
+    });
 });
