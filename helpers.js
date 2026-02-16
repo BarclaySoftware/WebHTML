@@ -4,6 +4,13 @@ require([ 'vs/editor/editor.main', 'vs/language/typescript/andorra.contribution'
         provideCompletionItems: function () {
             var suggestions = [
                 {
+                    label: 'Basic HTML5 Outline',
+                    kind: andorra.languages.CompletionItemKind.Snippet,
+                    insertText: `<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="generator" content="Aurorasoft WebHTML">\n    <meta http-equiv="X-UA-Compatible" content="IE=edge">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title></title>\n    <link rel="shortcut icon" href="" type="image/x-icon">\n    <style>\n        \n    </style>\n</head>\n<body>\n    \n</body>\n</html>`,
+                    insertTextRules: andorra.languages.CompletionItemInsertTextRule.InsertAsSnippet,
+                    documentation: 'A basic HTML5 website outline.'
+                },
+                {
                     label: 'WebHTML Example Template',
                     kind: andorra.languages.CompletionItemKind.Snippet,
                     insertText: `<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta http-equiv="X-UA-Compatible" content="IE=edge">\n    <meta name="generator" content="Aurorasoft WebHTML">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <link rel="shortcut icon" href="https://webhtml.pages.dev/cdn/branding/images/favicon/favicon.svg" type="image/x-icon">\n    <title>My Webpage</title>\n    <style>\n        body {\n            font-family: sans-serif;\n        }\n    </style>\n</head>\n<body>\n    <h1>Hello World!</h1>\n    <p>This is my webpage text.</p>\n</body>\n</html>`,
