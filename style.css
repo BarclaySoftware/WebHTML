@@ -5,14 +5,20 @@
     --as-webhtml-ui-body-color: #1e1e1e;
     --as-webhtml-ui-btn-reg: #262626;
     --as-webhtml-ui-btn-hover: #363636;
-    --as-webhtml-ui-btn-focus: #bc5fd3;
-
+    --as-webhtml-ui-btn-focus: #9283f1;
+    
+    --as-webhtml-ui-red: #df809b;
+    --as-webhtml-ui-yellow: #f7edba;
+    --as-webhtml-ui-green: #95ef93;
+    --as-webhtml-ui-blue: #91cafd;
+    --as-webhtml-ui-purple: #9283f1;
 }
 
 .andorra-editor {
     --andorra-sans-font: 'Sevolt UI', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
     --andorra-monospace-font: 'Consolium', "SF Mono", Andorra, Menlo, Consolas, "Ubuntu Mono", "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace !important;
     font-family: var(--andorra-sans-font) !important;
+    --andorra-focusBorder: #9283f1 !important;
 }
 
 html, body {
@@ -101,8 +107,8 @@ iframe {
     }
 
     body {
-        background-color: var(--as-webhtml-ui-body-color);
-        overflow: auto;
+        background-color: var(--as-webhtml-ui-header-color);
+        overflow: none;
     }
 
     #editor-container {
@@ -112,6 +118,5 @@ iframe {
     #editor {
         width: 100% !important;
         height: 100%;
-        overflow: none !important;
     }
 }

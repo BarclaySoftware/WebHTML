@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>TextComp - Compare Two Blocks of Text</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fontapi.pages.dev/css/global.css" rel="stylesheet">
+    <script src="https://apicenter.pages.dev/libraries/andorra/min/vs/loader.js"></script>
+    <style>
+        :root {
+            --as-webhtml-ui-font: 'Jupiter Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .andorra-editor {
+            --andorra-sans-font: 'Jupiter Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+            --andorra-monospace-font: 'Jupiter Sans Code', "SF Mono", Andorra, Menlo, Consolas, "Ubuntu Mono", "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace !important;
+            font-family: var(--andorra-sans-font) !important;
+            --andorra-focusBorder: #9283f1 !important;
+        }
+
+        body {
+            font-family: var(--as-webhtml-ui-font);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: #f4f6f8;
+        }
+
+        header {
+            background: #1e1e1e;
+            color: white;
+            padding: 12px 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .toolbar {
+            padding: 10px;
+            background: #ffffff;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            font-family: var(--as-webhtml-ui-font);
+            padding: 6px 12px;
+            border: none;
+            background: #0078d4;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background: #005fa3;
+        }
+
+        #editor-container {
+            flex: 1;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>TextComp&trade;</header>
+
+    <div class="toolbar">
+        <button id="clearBtn">Clear</button>
+        <button id="sampleBtn">Load Sample</button>
+    </div>
+
+    <div id="editor-container"></div>
+
+    <script>
+        require.config({ paths: { 'vs': 'https://apicenter.pages.dev/libraries/andorra/min/vs' } });
+
+        require(["vs/editor/editor.main"], function () {
+            const originalModel = andorra.editor.createModel(
+                "Paste original text here...\n",
+                "text/plain"
+            );
+
+            const modifiedModel = andorra.editor.createModel(
+                "Paste modified text here...\n",
+                "text/plain"
+            );
+
+            const diffEditor = andorra.editor.createDiffEditor(
+                document.getElementById("editor-container"),
+                {
+                    automaticLayout: true,
+                    find: { cursorMoveOnType: true, findOnType: true, addExtraSpaceOnTop: true },
+                    originalEditable: true,
+                    readOnly: false,
+                    renderSideBySide: true,
+                    minimap: { enabled: false },
+                    fontSize: 14,
+                    fontFamily: 'Jupiter Sans Code',
+                    wordWrap: "on",
+                    scrollBeyondLastLine: false
+                }
+            );
+
+            function ensureFontsLoaded(callback) { document.fonts.ready.then(() => { andorra.editor.remeasureFonts(); callback(); }); }
+            ensureFontsLoaded(() => { console.log("WebHTML UI Manager: Fonts applied successfully!"); });
+
+            diffEditor.setModel({
+                original: originalModel,
+                modified: modifiedModel
+            });
+
+            document.getElementById("clearBtn").addEventListener("click", () => {
+                originalModel.setValue("");
+                modifiedModel.setValue("");
+            });
+
+            document.getElementById("sampleBtn").addEventListener("click", () => {
+                originalModel.setValue(
+                    `Hello World\nThis is the original text.\nIt has three lines.\nGoodbye!`
+                );
+
+                modifiedModel.setValue(
+                    `Hello World!\nThis is the modified text.\nIt has four lines.\nNew line added.\nGoodbye!`
+                );
+            });
+
+        });
+    </script>
+</body>
+</html>

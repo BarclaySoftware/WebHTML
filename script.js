@@ -27,9 +27,9 @@ require([ 'vs/editor/editor.main', 'vs/language/typescript/andorra.contribution'
         editContext: true,
         experimentalWhitespaceRendering: 'font',
 
-        find: { cursorMoveOnType: true, findOnType: true },
+        find: { cursorMoveOnType: true, findOnType: true, },
         foldingStrategy: 'indentation',
-        fontFamily: `'Laurentia Code', monospace`,
+        fontFamily: `Laurentia Mono, Consolium, 'Courier New', monospace`,
         fontLigatures: "'ss19' 1",
         fontSize: 16,
         formatOnPaste: true,
@@ -85,7 +85,7 @@ require([ 'vs/editor/editor.main', 'vs/language/typescript/andorra.contribution'
     // Ensure any custom fonts load properly.
     function ensureFontsLoaded(callback) { document.fonts.ready.then(() => { andorra.editor.remeasureFonts(); callback(); }); }
     ensureFontsLoaded(() => { console.log("WebHTML UI Manager: Fonts applied successfully!"); });
-    editor.onDidChangeModelContent(() => { const html = editor.getValue(); /* preview.srcdoc = html; */ });
+    editor.onDidChangeModelContent(() => { const html = editor.getValue(); });
 
     const PREVIEW_TITLE = 'Preview - Aurorasoft WebHTML';
     const PREVIEW_FAVICON = 'https://webhtml.pages.dev/cdn/branding/images/favicon/favicon.svg?v1';
@@ -99,18 +99,7 @@ require([ 'vs/editor/editor.main', 'vs/language/typescript/andorra.contribution'
     function togglePreviewPopup() {
         const button = document.getElementById('previewPopup');
 
-        if (popupPreviewActive) {
-            if (previewPopupWindow && !previewPopupWindow.closed) {
-                previewPopupWindow.close();
-            }
-
-            popupPreviewActive = false;
-            previewPopupWindow = null;
-
-            button.textContent = 'Run';
-            updatePreview();
-            return;
-        }
+        if (popupPreviewActive) { if (previewPopupWindow && !previewPopupWindow.closed) { previewPopupWindow.close(); } popupPreviewActive = false; previewPopupWindow = null; button.textContent = 'Run'; updatePreview(); return; }
 
         previewPopupWindow = window.open(
             '',
@@ -118,10 +107,7 @@ require([ 'vs/editor/editor.main', 'vs/language/typescript/andorra.contribution'
             'width=900,height=600,resizable=yes,scrollbars=yes,popups=yes'
         );
 
-        if (!previewPopupWindow) {
-            alert('Popup blocked! Please allow popups.');
-            return;
-        }
+        if (!previewPopupWindow) { alert('Popup blocked! Please allow popups.'); return; }
 
         previewPopupWindow.document.open();
         previewPopupWindow.document.write(`
@@ -160,15 +146,7 @@ require([ 'vs/editor/editor.main', 'vs/language/typescript/andorra.contribution'
 
     var isModified = false;
 
-    editor.onDidChangeModelContent(function() {
-        isModified = true;
-        var fileName = document.title;
-        if (!fileName.endsWith('*')) {
-            fileName += "*";
-        }
-        document.title = fileName;
-        updatePreview();
-    });
+    editor.onDidChangeModelContent(function() { isModified = true; var fileName = document.title; if (!fileName.endsWith('*')) { fileName += "*"; } document.title = fileName; updatePreview(); });
 
     function updatePreview() {
         if (previewPopupWindow && !previewPopupWindow.closed) {
@@ -196,27 +174,7 @@ require([ 'vs/editor/editor.main', 'vs/language/typescript/andorra.contribution'
     .getElementById('previewPopup')
     .addEventListener('click', togglePreviewPopup);
 
-    window.addEventListener('keydown', function(event) {
-        if (event.ctrlKey && event.key === 's') {
-            event.preventDefault();
-            saveFile();
-        } else if (event.ctrlKey && event.key === 'o') {
-            event.preventDefault();
-            openFile();
-        } else if (event.altKey && event.key === 'm') {
-            event.preventDefault();
-            var minimapEnabled = editor.getOption(andorra.editor.EditorOption.minimap).enabled;
-            editor.updateOptions({ minimap: { enabled: !minimapEnabled } });
-            document.getElementById('minimapSelect').value = minimapEnabled ? 'off' : 'on';
-        } else if (event.altKey && event.key === 'z') {
-            event.preventDefault();
-            var wordWrapEnabled = editor.getOption(andorra.editor.EditorOption.wordWrap) === 'on';
-            editor.updateOptions({ wordWrap: wordWrapEnabled ? 'off' : 'on' });
-            document.getElementById('lineWrapSelect').value = wordWrapEnabled ? 'off' : 'on';
-        }
-    });
+    window.addEventListener('keydown', function(event) { if (event.ctrlKey && event.key === 's') { event.preventDefault(); saveFile(); } else if (event.ctrlKey && event.key === 'o') { event.preventDefault(); openFile(); } else if (event.altKey && event.key === 'm') { event.preventDefault(); var minimapEnabled = editor.getOption(andorra.editor.EditorOption.minimap).enabled; editor.updateOptions({ minimap: { enabled: !minimapEnabled } }); } else if (event.altKey && event.key === 'z') { event.preventDefault(); var wordWrapEnabled = editor.getOption(andorra.editor.EditorOption.wordWrap) === 'on'; editor.updateOptions({ wordWrap: wordWrapEnabled ? 'off' : 'on' }); } else if (event.key === 'F5') { event.preventDefault(); togglePreviewPopup(); } });
 
-    document.getElementById('help').addEventListener('click', function() {
-        window.open("https://aurorasoft.pages.dev/help/webhtml/")
-    });
+    document.getElementById('help').addEventListener('click', function() { window.open("https://aurorasoft.pages.dev/help/webhtml/") });
 });
