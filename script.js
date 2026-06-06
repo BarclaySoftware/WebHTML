@@ -28,6 +28,7 @@ require([ 'vs/editor/editor.main', 'vs/language/typescript/andorra.contribution'
         experimentalWhitespaceRendering: 'font',
 
         find: { cursorMoveOnType: true, findOnType: true, },
+        fixedOverflowWidgets: true,
         foldingStrategy: 'indentation',
         fontFamily: `Laurentia Mono, Consolium, 'Courier New', monospace`,
         fontLigatures: "'ss19' 1",
@@ -86,6 +87,7 @@ require([ 'vs/editor/editor.main', 'vs/language/typescript/andorra.contribution'
     function ensureFontsLoaded(callback) { document.fonts.ready.then(() => { andorra.editor.remeasureFonts(); callback(); }); }
     ensureFontsLoaded(() => { console.log("WebHTML UI Manager: Fonts applied successfully!"); });
     editor.onDidChangeModelContent(() => { const html = editor.getValue(); });
+    editor.focus();
 
     const PREVIEW_TITLE = 'Preview - Aurorasoft WebHTML';
     const PREVIEW_FAVICON = 'https://webhtml.pages.dev/cdn/branding/images/favicon/favicon.svg?v1';

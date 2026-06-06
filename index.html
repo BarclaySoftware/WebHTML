@@ -13,12 +13,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <img id="logo" src="https://webhtml.pages.dev/cdn/branding/images/logo/wordmark.png" alt="WebHTML">
-    <div class="button-container">
-        <button title="Open HTML..." id="openButton">Open</button>
-        <button title="Save HTML..." id="saveButton">Save</button>
-        <button title="Toggle Preview Window" id="previewPopup" class="text">Run</button>
-        <button title="Get Help" id="help">Help</button>
+    <div id="button-container">
+        <img id="logo" src="https://webhtml.pages.dev/cdn/branding/images/logo/wordmark.png" alt="WebHTML">
+
+        <div class="buttons">
+            <button id="openButton">Open</button>
+            <button id="saveButton">Save</button>
+            <button id="previewPopup" class="text">Run</button>
+            <button id="help">Help</button>
+        </div>
     </div>
     <div id="editor-container">
         <div id="editor" class="pane"></div>
